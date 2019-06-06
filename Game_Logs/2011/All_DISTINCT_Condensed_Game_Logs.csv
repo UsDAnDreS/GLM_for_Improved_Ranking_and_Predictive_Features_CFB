@@ -1,0 +1,813 @@
+"","Team","X","Opponent","Result","Date"
+"1","Air Force","","Non-Major","W (37-20)",2011-09-03
+"2","Air Force","","Texas Christian","L (19-35)",2011-09-10
+"3","Air Force","","Non-Major","W (63-24)",2011-09-24
+"4","Air Force","@","Navy","W (35-34)",2011-10-01
+"5","Air Force","@","Notre Dame","L (33-59)",2011-10-08
+"6","Air Force","","San Diego State","L (27-41)",2011-10-13
+"7","Air Force","@","Boise State","L (26-37)",2011-10-22
+"8","Air Force","@","New Mexico","W (42-0)",2011-10-29
+"9","Air Force","","Army","W (24-14)",2011-11-05
+"10","Air Force","","Wyoming","L (17-25)",2011-11-12
+"11","Air Force","","Nevada-Las Vegas","W (45-17)",2011-11-19
+"12","Air Force","@","Colorado State","W (45-21)",2011-11-26
+"13","Air Force","N","Toledo","L (41-42)",2011-12-28
+"14","Akron","@","Ohio State","L (0-42)",2011-09-03
+"15","Akron","","Temple","L (3-41)",2011-09-10
+"16","Akron","@","Cincinnati","L (14-59)",2011-09-17
+"17","Akron","","Non-Major","W (36-13)",2011-09-24
+"18","Akron","@","Eastern Michigan","L (23-31)",2011-10-01
+"19","Akron","","Florida International","L (17-27)",2011-10-08
+"20","Akron","","Ohio","L (20-37)",2011-10-22
+"21","Akron","","Central Michigan","L (22-23)",2011-10-29
+"22","Akron","@","Miami (OH)","L (3-35)",2011-11-03
+"23","Akron","","Kent State","L (3-35)",2011-11-12
+"24","Akron","@","Buffalo","L (10-51)",2011-11-19
+"25","Akron","@","Western Michigan","L (19-68)",2011-11-25
+"26","Alabama","","Kent State","W (48-7)",2011-09-03
+"27","Alabama","@","Penn State","W (27-11)",2011-09-10
+"28","Alabama","","North Texas","W (41-0)",2011-09-17
+"29","Alabama","","Arkansas","W (38-14)",2011-09-24
+"30","Alabama","@","Florida","W (38-10)",2011-10-01
+"31","Alabama","","Vanderbilt","W (34-0)",2011-10-08
+"32","Alabama","@","Mississippi","W (52-7)",2011-10-15
+"33","Alabama","","Tennessee","W (37-6)",2011-10-22
+"34","Alabama","","Louisiana State","L (6-9)",2011-11-05
+"35","Alabama","@","Mississippi State","W (24-7)",2011-11-12
+"36","Alabama","","Non-Major","W (45-21)",2011-11-19
+"37","Alabama","@","Auburn","W (42-14)",2011-11-26
+"38","Alabama","N","Louisiana State","W (21-0)",2012-01-09
+"39","Arizona","","Non-Major","W (41-10)",2011-09-03
+"40","Arizona","@","Oklahoma State","L (14-37)",2011-09-08
+"41","Arizona","","Stanford","L (10-37)",2011-09-17
+"42","Arizona","","Oregon","L (31-56)",2011-09-24
+"43","Arizona","@","Southern California","L (41-48)",2011-10-01
+"44","Arizona","@","Oregon State","L (27-37)",2011-10-08
+"45","Arizona","","UCLA","W (48-12)",2011-10-20
+"46","Arizona","@","Washington","L (31-42)",2011-10-29
+"47","Arizona","","Utah","L (21-34)",2011-11-05
+"48","Arizona","@","Colorado","L (29-48)",2011-11-12
+"49","Arizona","@","Arizona State","W (31-27)",2011-11-19
+"50","Arizona","","Louisiana","W (45-37)",2011-11-26
+"51","Arizona State","","Non-Major","W (48-14)",2011-09-01
+"52","Arizona State","","Missouri","W (37-30)",2011-09-09
+"53","Arizona State","@","Illinois","L (14-17)",2011-09-17
+"54","Arizona State","","Southern California","W (43-22)",2011-09-24
+"55","Arizona State","","Oregon State","W (35-20)",2011-10-01
+"56","Arizona State","@","Utah","W (35-14)",2011-10-08
+"57","Arizona State","@","Oregon","L (27-41)",2011-10-15
+"58","Arizona State","","Colorado","W (48-14)",2011-10-29
+"59","Arizona State","@","UCLA","L (28-29)",2011-11-05
+"60","Arizona State","@","Washington State","L (27-37)",2011-11-12
+"62","Arizona State","","California","L (38-47)",2011-11-25
+"63","Arizona State","N","Boise State","L (24-56)",2011-12-22
+"64","Arkansas","","Non-Major","W (51-7)",2011-09-03
+"65","Arkansas","","New Mexico","W (52-3)",2011-09-10
+"66","Arkansas","","Troy","W (38-28)",2011-09-17
+"68","Arkansas","N","Texas A&M","W (42-38)",2011-10-01
+"69","Arkansas","","Auburn","W (38-14)",2011-10-08
+"70","Arkansas","@","Mississippi","W (29-24)",2011-10-22
+"71","Arkansas","@","Vanderbilt","W (31-28)",2011-10-29
+"72","Arkansas","","South Carolina","W (44-28)",2011-11-05
+"73","Arkansas","","Tennessee","W (49-7)",2011-11-12
+"74","Arkansas","","Mississippi State","W (44-17)",2011-11-19
+"75","Arkansas","@","Louisiana State","L (17-41)",2011-11-25
+"76","Arkansas","N","Kansas State","W (29-16)",2012-01-06
+"77","Arkansas State","@","Illinois","L (15-33)",2011-09-03
+"78","Arkansas State","","Memphis","W (47-3)",2011-09-10
+"79","Arkansas State","@","Virginia Tech","L (7-26)",2011-09-17
+"80","Arkansas State","","Non-Major","W (53-24)",2011-09-24
+"81","Arkansas State","@","Western Kentucky","W (26-22)",2011-10-01
+"82","Arkansas State","@","Louisiana-Monroe","W (24-19)",2011-10-08
+"83","Arkansas State","","Florida International","W (34-16)",2011-10-18
+"84","Arkansas State","","North Texas","W (37-14)",2011-10-29
+"85","Arkansas State","@","Florida Atlantic","W (39-21)",2011-11-05
+"86","Arkansas State","","Louisiana","W (30-21)",2011-11-12
+"87","Arkansas State","@","Middle Tennessee State","W (45-19)",2011-11-19
+"88","Arkansas State","","Troy","W (45-14)",2011-12-03
+"89","Arkansas State","N","Northern Illinois","L (20-38)",2012-01-08
+"90","Army","@","Northern Illinois","L (26-49)",2011-09-03
+"91","Army","","San Diego State","L (20-23)",2011-09-10
+"92","Army","","Northwestern","W (21-14)",2011-09-17
+"93","Army","@","Ball State","L (21-48)",2011-09-24
+"94","Army","","Tulane","W (45-6)",2011-10-01
+"95","Army","@","Miami (OH)","L (28-35)",2011-10-08
+"96","Army","@","Vanderbilt","L (21-44)",2011-10-22
+"97","Army","","Non-Major","W (55-0)",2011-10-29
+"99","Army","N","Rutgers","L (12-27)",2011-11-12
+"100","Army","@","Temple","L (14-42)",2011-11-19
+"101","Army","@","Navy","L (21-27)",2011-12-10
+"102","Auburn","","Utah State","W (42-38)",2011-09-03
+"103","Auburn","","Mississippi State","W (41-34)",2011-09-10
+"104","Auburn","@","Clemson","L (24-38)",2011-09-17
+"105","Auburn","","Florida Atlantic","W (30-14)",2011-09-24
+"106","Auburn","@","South Carolina","W (16-13)",2011-10-01
+"108","Auburn","","Florida","W (17-6)",2011-10-15
+"109","Auburn","@","Louisiana State","L (10-45)",2011-10-22
+"110","Auburn","","Mississippi","W (41-23)",2011-10-29
+"111","Auburn","@","Georgia","L (7-45)",2011-11-12
+"112","Auburn","","Non-Major","W (35-16)",2011-11-19
+"114","Auburn","N","Virginia","W (43-24)",2011-12-31
+"115","Ball State","N","Indiana","W (27-20)",2011-09-03
+"116","Ball State","@","South Florida","L (7-37)",2011-09-10
+"117","Ball State","","Buffalo","W (28-25)",2011-09-17
+"119","Ball State","@","Oklahoma","L (6-62)",2011-10-01
+"120","Ball State","","Temple","L (0-42)",2011-10-08
+"121","Ball State","@","Ohio","W (23-20)",2011-10-15
+"122","Ball State","","Central Michigan","W (31-27)",2011-10-22
+"123","Ball State","@","Western Michigan","L (35-45)",2011-10-29
+"124","Ball State","@","Eastern Michigan","W (33-31)",2011-11-05
+"125","Ball State","@","Northern Illinois","L (38-41)",2011-11-15
+"126","Ball State","","Toledo","L (28-45)",2011-11-25
+"127","Baylor","","Texas Christian","W (50-48)",2011-09-02
+"128","Baylor","","Non-Major","W (48-0)",2011-09-17
+"129","Baylor","","Rice","W (56-31)",2011-09-24
+"130","Baylor","@","Kansas State","L (35-36)",2011-10-01
+"131","Baylor","","Iowa State","W (49-26)",2011-10-08
+"132","Baylor","@","Texas A&M","L (28-55)",2011-10-15
+"133","Baylor","@","Oklahoma State","L (24-59)",2011-10-29
+"134","Baylor","","Missouri","W (42-39)",2011-11-05
+"135","Baylor","@","Kansas","W (31-30)",2011-11-12
+"136","Baylor","","Oklahoma","W (45-38)",2011-11-19
+"137","Baylor","N","Texas Tech","W (66-42)",2011-11-26
+"138","Baylor","","Texas","W (48-24)",2011-12-03
+"139","Baylor","N","Washington","W (67-56)",2011-12-29
+"140","Boise State","@","Georgia","W (35-21)",2011-09-03
+"141","Boise State","@","Toledo","W (40-15)",2011-09-16
+"142","Boise State","","Tulsa","W (41-21)",2011-09-24
+"143","Boise State","","Nevada","W (30-10)",2011-10-01
+"144","Boise State","@","Fresno State","W (57-7)",2011-10-07
+"145","Boise State","@","Colorado State","W (63-13)",2011-10-15
+"147","Boise State","@","Nevada-Las Vegas","W (48-21)",2011-11-05
+"148","Boise State","","Texas Christian","L (35-36)",2011-11-12
+"149","Boise State","@","San Diego State","W (52-35)",2011-11-19
+"150","Boise State","","Wyoming","W (36-14)",2011-11-26
+"151","Boise State","","New Mexico","W (45-0)",2011-12-03
+"153","Boston College","","Northwestern","L (17-24)",2011-09-03
+"154","Boston College","@","Central Florida","L (3-30)",2011-09-10
+"155","Boston College","","Duke","L (19-20)",2011-09-17
+"156","Boston College","","Non-Major","W (45-17)",2011-09-24
+"157","Boston College","","Wake Forest","L (19-27)",2011-10-01
+"158","Boston College","@","Clemson","L (14-36)",2011-10-08
+"159","Boston College","@","Virginia Tech","L (14-30)",2011-10-22
+"160","Boston College","@","Maryland","W (28-17)",2011-10-29
+"161","Boston College","","Florida State","L (7-38)",2011-11-03
+"162","Boston College","","North Carolina State","W (14-10)",2011-11-12
+"163","Boston College","@","Notre Dame","L (14-16)",2011-11-19
+"164","Boston College","@","Miami (FL)","W (24-17)",2011-11-25
+"165","Bowling Green State","@","Idaho","W (32-15)",2011-09-01
+"166","Bowling Green State","","Non-Major","W (58-13)",2011-09-10
+"167","Bowling Green State","","Wyoming","L (27-28)",2011-09-17
+"168","Bowling Green State","@","Miami (OH)","W (37-23)",2011-09-24
+"169","Bowling Green State","@","West Virginia","L (10-55)",2011-10-01
+"170","Bowling Green State","@","Western Michigan","L (21-45)",2011-10-08
+"171","Bowling Green State","","Toledo","L (21-28)",2011-10-15
+"172","Bowling Green State","","Temple","W (13-10)",2011-10-22
+"173","Bowling Green State","@","Kent State","L (15-27)",2011-10-29
+"174","Bowling Green State","","Northern Illinois","L (14-45)",2011-11-08
+"175","Bowling Green State","","Ohio","L (28-29)",2011-11-16
+"176","Bowling Green State","@","Buffalo","W (42-28)",2011-11-25
+"177","Brigham Young","@","Mississippi","W (14-13)",2011-09-03
+"178","Brigham Young","@","Texas","L (16-17)",2011-09-10
+"179","Brigham Young","","Utah","L (10-54)",2011-09-17
+"180","Brigham Young","","Central Florida","W (24-17)",2011-09-23
+"181","Brigham Young","","Utah State","W (27-24)",2011-09-30
+"182","Brigham Young","","San Jose State","W (29-16)",2011-10-08
+"183","Brigham Young","@","Oregon State","W (38-28)",2011-10-15
+"184","Brigham Young","","Non-Major","W (56-3)",2011-10-22
+"185","Brigham Young","@","Texas Christian","L (28-38)",2011-10-28
+"186","Brigham Young","","Idaho","W (42-7)",2011-11-12
+"187","Brigham Young","","New Mexico State","W (42-7)",2011-11-19
+"188","Brigham Young","@","Hawaii","W (41-20)",2011-12-03
+"189","Brigham Young","N","Tulsa","W (24-21)",2011-12-30
+"190","Buffalo","@","Pittsburgh","L (16-35)",2011-09-03
+"191","Buffalo","","Non-Major","W (35-7)",2011-09-10
+"193","Buffalo","","Connecticut","L (3-17)",2011-09-24
+"194","Buffalo","@","Tennessee","L (10-41)",2011-10-01
+"195","Buffalo","","Ohio","W (38-37)",2011-10-08
+"196","Buffalo","@","Temple","L (0-34)",2011-10-15
+"197","Buffalo","","Northern Illinois","L (30-31)",2011-10-22
+"198","Buffalo","@","Miami (OH)","L (13-41)",2011-10-29
+"199","Buffalo","@","Eastern Michigan","L (17-30)",2011-11-12
+"202","California","N","Fresno State","W (36-21)",2011-09-03
+"203","California","@","Colorado","W (36-33)",2011-09-10
+"204","California","","Non-Major","W (63-12)",2011-09-17
+"205","California","@","Washington","L (23-31)",2011-09-24
+"206","California","@","Oregon","L (15-43)",2011-10-06
+"207","California","","Southern California","L (9-30)",2011-10-13
+"208","California","","Utah","W (34-10)",2011-10-22
+"209","California","@","UCLA","L (14-31)",2011-10-29
+"210","California","","Washington State","W (30-7)",2011-11-05
+"211","California","","Oregon State","W (23-6)",2011-11-12
+"212","California","@","Stanford","L (28-31)",2011-11-19
+"214","California","N","Texas","L (10-21)",2011-12-28
+"215","Central Michigan","","Non-Major","W (21-6)",2011-09-01
+"216","Central Michigan","@","Kentucky","L (13-27)",2011-09-10
+"217","Central Michigan","@","Western Michigan","L (14-44)",2011-09-17
+"218","Central Michigan","@","Michigan State","L (7-45)",2011-09-24
+"219","Central Michigan","","Northern Illinois","W (48-41)",2011-10-01
+"220","Central Michigan","@","North Carolina State","L (24-38)",2011-10-08
+"221","Central Michigan","","Eastern Michigan","L (28-35)",2011-10-15
+"224","Central Michigan","@","Kent State","L (21-24)",2011-11-04
+"225","Central Michigan","","Ohio","L (28-43)",2011-11-10
+"226","Central Michigan","","Toledo","L (17-44)",2011-11-18
+"227","Cincinnati","","Non-Major","W (72-10)",2011-09-03
+"228","Cincinnati","@","Tennessee","L (23-45)",2011-09-10
+"230","Cincinnati","","North Carolina State","W (44-14)",2011-09-22
+"231","Cincinnati","@","Miami (OH)","W (27-0)",2011-10-01
+"232","Cincinnati","","Louisville","W (25-16)",2011-10-15
+"233","Cincinnati","@","South Florida","W (37-34)",2011-10-22
+"234","Cincinnati","@","Pittsburgh","W (26-23)",2011-11-05
+"235","Cincinnati","","West Virginia","L (21-24)",2011-11-12
+"236","Cincinnati","@","Rutgers","L (3-20)",2011-11-19
+"237","Cincinnati","@","Syracuse","W (30-13)",2011-11-26
+"238","Cincinnati","","Connecticut","W (35-27)",2011-12-03
+"239","Cincinnati","N","Vanderbilt","W (31-24)",2011-12-31
+"240","Clemson","","Troy","W (43-19)",2011-09-03
+"241","Clemson","","Non-Major","W (35-27)",2011-09-10
+"243","Clemson","","Florida State","W (35-30)",2011-09-24
+"244","Clemson","@","Virginia Tech","W (23-3)",2011-10-01
+"246","Clemson","@","Maryland","W (56-45)",2011-10-15
+"247","Clemson","","North Carolina","W (59-38)",2011-10-22
+"248","Clemson","@","Georgia Tech","L (17-31)",2011-10-29
+"249","Clemson","","Wake Forest","W (31-28)",2011-11-12
+"250","Clemson","@","North Carolina State","L (13-37)",2011-11-19
+"251","Clemson","@","South Carolina","L (13-34)",2011-11-26
+"252","Clemson","N","Virginia Tech","W (38-10)",2011-12-03
+"253","Clemson","N","West Virginia","L (33-70)",2012-01-04
+"254","Colorado","@","Hawaii","L (17-34)",2011-09-03
+"256","Colorado","N","Colorado State","W (28-14)",2011-09-17
+"257","Colorado","@","Ohio State","L (17-37)",2011-09-24
+"258","Colorado","","Washington State","L (27-31)",2011-10-01
+"259","Colorado","@","Stanford","L (7-48)",2011-10-08
+"260","Colorado","@","Washington","L (24-52)",2011-10-15
+"261","Colorado","","Oregon","L (2-45)",2011-10-22
+"263","Colorado","","Southern California","L (17-42)",2011-11-04
+"265","Colorado","@","UCLA","L (6-45)",2011-11-19
+"266","Colorado","@","Utah","W (17-14)",2011-11-25
+"267","Colorado State","@","New Mexico","W (14-10)",2011-09-03
+"268","Colorado State","","Non-Major","W (33-14)",2011-09-10
+"270","Colorado State","@","Utah State","W (35-34)",2011-09-24
+"271","Colorado State","","San Jose State","L (31-38)",2011-10-01
+"273","Colorado State","@","Texas-El Paso","L (17-31)",2011-10-22
+"274","Colorado State","@","Nevada-Las Vegas","L (35-38)",2011-10-29
+"275","Colorado State","","San Diego State","L (15-18)",2011-11-12
+"276","Colorado State","@","Texas Christian","L (10-34)",2011-11-19
+"278","Colorado State","","Wyoming","L (19-22)",2011-12-03
+"279","Connecticut","","Non-Major","W (35-3)",2011-09-03
+"280","Connecticut","@","Vanderbilt","L (21-24)",2011-09-10
+"281","Connecticut","","Iowa State","L (20-24)",2011-09-16
+"283","Connecticut","","Western Michigan","L (31-38)",2011-10-01
+"284","Connecticut","@","West Virginia","L (16-43)",2011-10-08
+"285","Connecticut","","South Florida","W (16-10)",2011-10-15
+"286","Connecticut","@","Pittsburgh","L (20-35)",2011-10-26
+"287","Connecticut","","Syracuse","W (28-21)",2011-11-05
+"288","Connecticut","","Louisville","L (20-34)",2011-11-19
+"289","Connecticut","","Rutgers","W (40-22)",2011-11-26
+"291","Duke","","Non-Major","L (21-23)",2011-09-03
+"292","Duke","","Stanford","L (14-44)",2011-09-10
+"294","Duke","","Tulane","W (48-27)",2011-09-24
+"295","Duke","@","Florida International","W (31-27)",2011-10-01
+"296","Duke","","Florida State","L (16-41)",2011-10-15
+"297","Duke","","Wake Forest","L (23-24)",2011-10-22
+"298","Duke","","Virginia Tech","L (10-14)",2011-10-29
+"299","Duke","@","Miami (FL)","L (14-49)",2011-11-05
+"300","Duke","@","Virginia","L (21-31)",2011-11-12
+"301","Duke","","Georgia Tech","L (31-38)",2011-11-19
+"302","Duke","@","North Carolina","L (21-37)",2011-11-26
+"303","East Carolina","N","South Carolina","L (37-56)",2011-09-03
+"304","East Carolina","","Virginia Tech","L (10-17)",2011-09-10
+"305","East Carolina","","Alabama-Birmingham","W (28-23)",2011-09-24
+"306","East Carolina","","North Carolina","L (20-35)",2011-10-01
+"307","East Carolina","@","Houston","L (3-56)",2011-10-08
+"308","East Carolina","@","Memphis","W (35-17)",2011-10-15
+"309","East Carolina","@","Navy","W (38-35)",2011-10-22
+"310","East Carolina","","Tulane","W (34-13)",2011-10-29
+"311","East Carolina","","Southern Mississippi","L (28-48)",2011-11-05
+"312","East Carolina","@","Texas-El Paso","L (17-22)",2011-11-12
+"313","East Carolina","","Central Florida","W (38-31)",2011-11-19
+"314","East Carolina","@","Marshall","L (27-34)",2011-11-26
+"315","Eastern Michigan","","Non-Major","W (41-9)",2011-09-04
+"316","Eastern Michigan","","Non-Major","W (14-7)",2011-09-10
+"317","Eastern Michigan","@","Michigan","L (3-31)",2011-09-17
+"318","Eastern Michigan","@","Penn State","L (6-34)",2011-09-24
+"320","Eastern Michigan","@","Toledo","L (16-54)",2011-10-08
+"322","Eastern Michigan","","Western Michigan","W (14-10)",2011-10-22
+"325","Eastern Michigan","@","Kent State","L (22-28)",2011-11-19
+"326","Eastern Michigan","@","Northern Illinois","L (12-18)",2011-11-25
+"327","Florida Atlantic","@","Florida","L (3-41)",2011-09-03
+"328","Florida Atlantic","@","Michigan State","L (0-44)",2011-09-10
+"330","Florida Atlantic","@","Louisiana","L (34-37)",2011-10-01
+"331","Florida Atlantic","@","North Texas","L (17-31)",2011-10-08
+"332","Florida Atlantic","","Western Kentucky","L (0-20)",2011-10-15
+"333","Florida Atlantic","","Middle Tennessee State","L (14-38)",2011-10-22
+"335","Florida Atlantic","@","Florida International","L (7-41)",2011-11-12
+"336","Florida Atlantic","@","Troy","L (7-34)",2011-11-19
+"337","Florida Atlantic","","Alabama-Birmingham","W (38-35)",2011-11-26
+"338","Florida Atlantic","","Louisiana-Monroe","L (0-26)",2011-12-03
+"340","Florida","","Alabama-Birmingham","W (39-0)",2011-09-10
+"341","Florida","","Tennessee","W (33-23)",2011-09-17
+"342","Florida","@","Kentucky","W (48-10)",2011-09-24
+"344","Florida","@","Louisiana State","L (11-41)",2011-10-08
+"346","Florida","N","Georgia","L (20-24)",2011-10-29
+"347","Florida","","Vanderbilt","W (26-21)",2011-11-05
+"348","Florida","@","South Carolina","L (12-17)",2011-11-12
+"349","Florida","","Non-Major","W (54-32)",2011-11-19
+"350","Florida","","Florida State","L (7-21)",2011-11-26
+"351","Florida","N","Ohio State","W (24-17)",2012-01-02
+"352","Florida International","","North Texas","W (41-16)",2011-09-01
+"353","Florida International","@","Louisville","W (24-17)",2011-09-09
+"354","Florida International","","Central Florida","W (17-10)",2011-09-17
+"355","Florida International","","Louisiana","L (31-36)",2011-09-24
+"359","Florida International","","Troy","W (23-20)",2011-10-25
+"360","Florida International","@","Western Kentucky","L (9-10)",2011-11-05
+"362","Florida International","@","Louisiana-Monroe","W (28-17)",2011-11-19
+"363","Florida International","@","Middle Tennessee State","W (31-18)",2011-11-26
+"364","Florida International","N","Marshall","L (10-20)",2011-12-20
+"365","Florida State","","Louisiana-Monroe","W (34-0)",2011-09-03
+"366","Florida State","","Non-Major","W (62-10)",2011-09-10
+"367","Florida State","","Oklahoma","L (13-23)",2011-09-17
+"369","Florida State","@","Wake Forest","L (30-35)",2011-10-08
+"371","Florida State","","Maryland","W (41-16)",2011-10-22
+"372","Florida State","","North Carolina State","W (34-0)",2011-10-29
+"374","Florida State","","Miami (FL)","W (23-19)",2011-11-12
+"375","Florida State","","Virginia","L (13-14)",2011-11-19
+"377","Florida State","N","Notre Dame","W (18-14)",2011-12-29
+"379","Fresno State","@","Nebraska","L (29-42)",2011-09-10
+"380","Fresno State","","Non-Major","W (27-22)",2011-09-17
+"381","Fresno State","@","Idaho","W (48-24)",2011-09-24
+"382","Fresno State","","Mississippi","L (28-38)",2011-10-01
+"384","Fresno State","","Utah State","W (31-21)",2011-10-15
+"385","Fresno State","@","Nevada","L (38-45)",2011-10-22
+"386","Fresno State","","Louisiana Tech","L (21-41)",2011-11-05
+"387","Fresno State","@","New Mexico State","L (45-48)",2011-11-12
+"388","Fresno State","@","Hawaii","W (24-21)",2011-11-19
+"389","Fresno State","","San Jose State","L (24-27)",2011-11-26
+"390","Fresno State","@","San Diego State","L (28-35)",2011-12-03
+"392","Georgia","","South Carolina","L (42-45)",2011-09-10
+"393","Georgia","","Non-Major","W (59-0)",2011-09-17
+"394","Georgia","@","Mississippi","W (27-13)",2011-09-24
+"395","Georgia","","Mississippi State","W (24-10)",2011-10-01
+"396","Georgia","@","Tennessee","W (20-12)",2011-10-08
+"397","Georgia","@","Vanderbilt","W (33-28)",2011-10-15
+"399","Georgia","","New Mexico State","W (63-16)",2011-11-05
+"401","Georgia","","Kentucky","W (19-10)",2011-11-19
+"402","Georgia","@","Georgia Tech","W (31-17)",2011-11-26
+"403","Georgia","N","Louisiana State","L (10-42)",2011-12-03
+"404","Georgia","N","Michigan State","L (30-33)",2012-01-02
+"405","Georgia Tech","","Non-Major","W (63-21)",2011-09-01
+"406","Georgia Tech","@","Middle Tennessee State","W (49-21)",2011-09-10
+"407","Georgia Tech","","Kansas","W (66-24)",2011-09-17
+"408","Georgia Tech","","North Carolina","W (35-28)",2011-09-24
+"409","Georgia Tech","@","North Carolina State","W (45-35)",2011-10-01
+"410","Georgia Tech","","Maryland","W (21-16)",2011-10-08
+"411","Georgia Tech","@","Virginia","L (21-24)",2011-10-15
+"412","Georgia Tech","@","Miami (FL)","L (7-24)",2011-10-22
+"414","Georgia Tech","","Virginia Tech","L (26-37)",2011-11-10
+"417","Georgia Tech","N","Utah","L (27-30)",2011-12-31
+"419","Hawaii","@","Washington","L (32-40)",2011-09-10
+"420","Hawaii","@","Nevada-Las Vegas","L (20-40)",2011-09-17
+"421","Hawaii","","Non-Major","W (56-14)",2011-09-24
+"422","Hawaii","@","Louisiana Tech","W (44-26)",2011-10-01
+"423","Hawaii","@","San Jose State","L (27-28)",2011-10-14
+"424","Hawaii","","New Mexico State","W (45-34)",2011-10-22
+"425","Hawaii","@","Idaho","W (16-14)",2011-10-29
+"426","Hawaii","","Utah State","L (31-35)",2011-11-05
+"427","Hawaii","@","Nevada","L (28-42)",2011-11-12
+"429","Hawaii","","Tulane","W (35-23)",2011-11-26
+"431","Houston","","UCLA","W (38-34)",2011-09-03
+"432","Houston","@","North Texas","W (48-23)",2011-09-10
+"433","Houston","@","Louisiana Tech","W (35-34)",2011-09-17
+"434","Houston","","Non-Major","W (56-0)",2011-09-24
+"435","Houston","@","Texas-El Paso","W (49-42)",2011-09-29
+"437","Houston","","Marshall","W (63-28)",2011-10-22
+"438","Houston","","Rice","W (73-34)",2011-10-27
+"439","Houston","@","Alabama-Birmingham","W (56-13)",2011-11-05
+"440","Houston","@","Tulane","W (73-17)",2011-11-10
+"441","Houston","","Southern Methodist","W (37-7)",2011-11-19
+"442","Houston","@","Tulsa","W (48-16)",2011-11-25
+"443","Houston","","Southern Mississippi","L (28-49)",2011-12-03
+"444","Houston","N","Penn State","W (30-14)",2012-01-02
+"446","Idaho","","Non-Major","W (44-14)",2011-09-10
+"447","Idaho","@","Texas A&M","L (7-37)",2011-09-17
+"449","Idaho","@","Virginia","L (20-21)",2011-10-01
+"450","Idaho","","Louisiana Tech","L (11-24)",2011-10-08
+"451","Idaho","@","New Mexico State","L (24-31)",2011-10-15
+"453","Idaho","@","San Jose State","W (32-29)",2011-11-05
+"455","Idaho","","Utah State","L (42-49)",2011-11-19
+"456","Idaho","@","Nevada","L (3-56)",2011-12-03
+"458","Illinois","","Non-Major","W (56-3)",2011-09-10
+"460","Illinois","","Western Michigan","W (23-20)",2011-09-24
+"461","Illinois","","Northwestern","W (38-35)",2011-10-01
+"462","Illinois","@","Indiana","W (41-20)",2011-10-08
+"463","Illinois","","Ohio State","L (7-17)",2011-10-15
+"464","Illinois","@","Purdue","L (14-21)",2011-10-22
+"465","Illinois","@","Penn State","L (7-10)",2011-10-29
+"466","Illinois","","Michigan","L (14-31)",2011-11-12
+"467","Illinois","","Wisconsin","L (17-28)",2011-11-19
+"468","Illinois","@","Minnesota","L (7-27)",2011-11-26
+"469","Illinois","N","UCLA","W (20-14)",2011-12-31
+"471","Indiana","","Virginia","L (31-34)",2011-09-10
+"472","Indiana","","Non-Major","W (38-21)",2011-09-17
+"473","Indiana","@","North Texas","L (21-24)",2011-09-24
+"474","Indiana","","Penn State","L (10-16)",2011-10-01
+"476","Indiana","@","Wisconsin","L (7-59)",2011-10-15
+"477","Indiana","@","Iowa","L (24-45)",2011-10-22
+"478","Indiana","","Northwestern","L (38-59)",2011-10-29
+"479","Indiana","@","Ohio State","L (20-34)",2011-11-05
+"480","Indiana","@","Michigan State","L (3-55)",2011-11-19
+"481","Indiana","","Purdue","L (25-33)",2011-11-26
+"482","Iowa","","Non-Major","W (34-7)",2011-09-03
+"483","Iowa","@","Iowa State","L (41-44)",2011-09-10
+"484","Iowa","","Pittsburgh","W (31-27)",2011-09-17
+"485","Iowa","","Louisiana-Monroe","W (45-17)",2011-09-24
+"486","Iowa","@","Penn State","L (3-13)",2011-10-08
+"487","Iowa","","Northwestern","W (41-31)",2011-10-15
+"489","Iowa","@","Minnesota","L (21-22)",2011-10-29
+"490","Iowa","","Michigan","W (24-16)",2011-11-05
+"491","Iowa","","Michigan State","L (21-37)",2011-11-12
+"492","Iowa","@","Purdue","W (31-21)",2011-11-19
+"493","Iowa","@","Nebraska","L (7-20)",2011-11-25
+"494","Iowa","N","Oklahoma","L (14-31)",2011-12-30
+"495","Iowa State","","Non-Major","W (20-19)",2011-09-03
+"498","Iowa State","","Texas","L (14-37)",2011-10-01
+"500","Iowa State","@","Missouri","L (17-52)",2011-10-15
+"501","Iowa State","","Texas A&M","L (17-33)",2011-10-22
+"502","Iowa State","@","Texas Tech","W (41-7)",2011-10-29
+"503","Iowa State","","Kansas","W (13-10)",2011-11-05
+"504","Iowa State","","Oklahoma State","W (37-31)",2011-11-18
+"505","Iowa State","@","Oklahoma","L (6-26)",2011-11-26
+"506","Iowa State","@","Kansas State","L (23-30)",2011-12-03
+"507","Iowa State","N","Rutgers","L (13-27)",2011-12-30
+"508","Kansas","","Non-Major","W (42-24)",2011-09-03
+"509","Kansas","","Northern Illinois","W (45-42)",2011-09-10
+"511","Kansas","","Texas Tech","L (34-45)",2011-10-01
+"512","Kansas","@","Oklahoma State","L (28-70)",2011-10-08
+"513","Kansas","","Oklahoma","L (17-47)",2011-10-15
+"514","Kansas","","Kansas State","L (21-59)",2011-10-22
+"515","Kansas","@","Texas","L (0-43)",2011-10-29
+"518","Kansas","@","Texas A&M","L (7-61)",2011-11-19
+"519","Kansas","N","Missouri","L (10-24)",2011-11-26
+"520","Kansas State","","Non-Major","W (10-7)",2011-09-03
+"521","Kansas State","","Kent State","W (37-0)",2011-09-17
+"522","Kansas State","@","Miami (FL)","W (28-24)",2011-09-24
+"524","Kansas State","","Missouri","W (24-17)",2011-10-08
+"525","Kansas State","@","Texas Tech","W (41-34)",2011-10-15
+"527","Kansas State","","Oklahoma","L (17-58)",2011-10-29
+"528","Kansas State","@","Oklahoma State","L (45-52)",2011-11-05
+"529","Kansas State","","Texas A&M","W (53-50)",2011-11-12
+"530","Kansas State","@","Texas","W (17-13)",2011-11-19
+"534","Kent State","","Louisiana","L (12-20)",2011-09-10
+"536","Kent State","","Non-Major","W (33-25)",2011-09-24
+"537","Kent State","@","Ohio","L (10-17)",2011-10-01
+"538","Kent State","@","Northern Illinois","L (10-40)",2011-10-08
+"539","Kent State","","Miami (OH)","L (3-9)",2011-10-15
+"544","Kent State","@","Temple","L (16-34)",2011-11-25
+"545","Kentucky","N","Western Kentucky","W (14-3)",2011-09-01
+"547","Kentucky","","Louisville","L (17-24)",2011-09-17
+"549","Kentucky","@","Louisiana State","L (7-35)",2011-10-01
+"550","Kentucky","@","South Carolina","L (3-54)",2011-10-08
+"551","Kentucky","","Non-Major","W (38-14)",2011-10-22
+"552","Kentucky","","Mississippi State","L (16-28)",2011-10-29
+"553","Kentucky","","Mississippi","W (30-13)",2011-11-05
+"554","Kentucky","@","Vanderbilt","L (8-38)",2011-11-12
+"556","Kentucky","","Tennessee","W (10-7)",2011-11-26
+"557","Louisiana","@","Oklahoma State","L (34-61)",2011-09-03
+"559","Louisiana","","Non-Major","W (38-21)",2011-09-17
+"562","Louisiana","","Troy","W (31-17)",2011-10-08
+"563","Louisiana","","North Texas","W (30-10)",2011-10-15
+"564","Louisiana","@","Western Kentucky","L (23-42)",2011-10-22
+"565","Louisiana","@","Middle Tennessee State","W (45-20)",2011-10-29
+"566","Louisiana","","Louisiana-Monroe","W (36-35)",2011-11-05
+"569","Louisiana","N","San Diego State","W (32-30)",2011-12-17
+"571","Louisiana-Monroe","","Non-Major","W (35-7)",2011-09-10
+"572","Louisiana-Monroe","@","Texas Christian","L (17-38)",2011-09-17
+"575","Louisiana-Monroe","@","Troy","W (38-10)",2011-10-15
+"576","Louisiana-Monroe","@","North Texas","L (21-38)",2011-10-22
+"577","Louisiana-Monroe","","Western Kentucky","L (28-31)",2011-10-29
+"579","Louisiana-Monroe","","Middle Tennessee State","W (42-14)",2011-11-12
+"582","Louisiana Tech","@","Southern Mississippi","L (17-19)",2011-09-03
+"583","Louisiana Tech","","Non-Major","W (48-42)",2011-09-10
+"585","Louisiana Tech","@","Mississippi State","L (20-26)",2011-09-24
+"588","Louisiana Tech","@","Utah State","W (24-17)",2011-10-22
+"589","Louisiana Tech","","San Jose State","W (38-28)",2011-10-29
+"591","Louisiana Tech","@","Mississippi","W (27-7)",2011-11-12
+"592","Louisiana Tech","@","Nevada","W (24-20)",2011-11-19
+"593","Louisiana Tech","","New Mexico State","W (44-0)",2011-11-26
+"594","Louisiana Tech","N","Texas Christian","L (24-31)",2011-12-21
+"595","Louisville","","Non-Major","W (21-9)",2011-09-01
+"598","Louisville","","Marshall","L (13-17)",2011-10-01
+"599","Louisville","@","North Carolina","L (7-14)",2011-10-08
+"601","Louisville","","Rutgers","W (16-14)",2011-10-21
+"602","Louisville","","Syracuse","W (27-10)",2011-10-29
+"603","Louisville","@","West Virginia","W (38-35)",2011-11-05
+"604","Louisville","","Pittsburgh","L (14-21)",2011-11-12
+"606","Louisville","@","South Florida","W (34-24)",2011-11-25
+"607","Louisville","N","North Carolina State","L (24-31)",2011-12-27
+"608","Louisiana State","N","Oregon","W (40-27)",2011-09-03
+"609","Louisiana State","","Non-Major","W (49-3)",2011-09-10
+"610","Louisiana State","@","Mississippi State","W (19-6)",2011-09-15
+"611","Louisiana State","@","West Virginia","W (47-21)",2011-09-24
+"614","Louisiana State","@","Tennessee","W (38-7)",2011-10-15
+"617","Louisiana State","","Western Kentucky","W (42-9)",2011-11-12
+"618","Louisiana State","@","Mississippi","W (52-3)",2011-11-19
+"622","Marshall","@","West Virginia","L (13-34)",2011-09-04
+"623","Marshall","","Southern Mississippi","W (26-20)",2011-09-10
+"624","Marshall","@","Ohio","L (7-44)",2011-09-17
+"625","Marshall","","Virginia Tech","L (10-30)",2011-09-24
+"627","Marshall","@","Central Florida","L (6-16)",2011-10-08
+"628","Marshall","","Rice","W (24-20)",2011-10-15
+"630","Marshall","","Alabama-Birmingham","W (59-14)",2011-10-29
+"631","Marshall","@","Tulsa","L (17-59)",2011-11-12
+"632","Marshall","@","Memphis","W (23-22)",2011-11-17
+"635","Maryland","","Miami (FL)","W (32-24)",2011-09-05
+"636","Maryland","","West Virginia","L (31-37)",2011-09-17
+"637","Maryland","","Temple","L (7-38)",2011-09-24
+"638","Maryland","","Non-Major","W (28-3)",2011-10-01
+"643","Maryland","","Virginia","L (13-31)",2011-11-05
+"644","Maryland","","Notre Dame","L (21-45)",2011-11-12
+"645","Maryland","@","Wake Forest","L (10-31)",2011-11-19
+"646","Maryland","@","North Carolina State","L (41-56)",2011-11-26
+"647","Memphis","","Mississippi State","L (14-59)",2011-09-01
+"649","Memphis","","Non-Major","W (27-6)",2011-09-17
+"650","Memphis","","Southern Methodist","L (0-42)",2011-09-24
+"651","Memphis","@","Middle Tennessee State","L (31-38)",2011-10-01
+"652","Memphis","@","Rice","L (6-28)",2011-10-08
+"654","Memphis","@","Tulane","W (33-17)",2011-10-22
+"655","Memphis","@","Central Florida","L (0-41)",2011-10-29
+"656","Memphis","","Alabama-Birmingham","L (35-41)",2011-11-12
+"658","Memphis","@","Southern Mississippi","L (7-44)",2011-11-26
+"660","Miami (FL)","","Ohio State","W (24-6)",2011-09-17
+"662","Miami (FL)","","Non-Major","W (45-14)",2011-10-01
+"663","Miami (FL)","@","Virginia Tech","L (35-38)",2011-10-08
+"664","Miami (FL)","@","North Carolina","W (30-24)",2011-10-15
+"666","Miami (FL)","","Virginia","L (21-28)",2011-10-27
+"669","Miami (FL)","@","South Florida","W (6-3)",2011-11-19
+"671","Miami (OH)","@","Missouri","L (6-17)",2011-09-03
+"672","Miami (OH)","@","Minnesota","L (23-29)",2011-09-17
+"677","Miami (OH)","@","Toledo","L (28-49)",2011-10-22
+"680","Miami (OH)","@","Temple","L (21-24)",2011-11-09
+"681","Miami (OH)","","Western Michigan","L (21-24)",2011-11-16
+"682","Miami (OH)","@","Ohio","L (14-21)",2011-11-22
+"683","Michigan","","Western Michigan","W (34-10)",2011-09-03
+"684","Michigan","","Notre Dame","W (35-31)",2011-09-10
+"686","Michigan","","San Diego State","W (28-7)",2011-09-24
+"687","Michigan","","Minnesota","W (58-0)",2011-10-01
+"688","Michigan","@","Northwestern","W (42-24)",2011-10-08
+"689","Michigan","@","Michigan State","L (14-28)",2011-10-15
+"690","Michigan","","Purdue","W (36-14)",2011-10-29
+"693","Michigan","","Nebraska","W (45-17)",2011-11-19
+"694","Michigan","","Ohio State","W (40-34)",2011-11-26
+"695","Michigan","N","Virginia Tech","W (23-20)",2012-01-03
+"696","Michigan State","","Non-Major","W (28-6)",2011-09-02
+"698","Michigan State","@","Notre Dame","L (13-31)",2011-09-17
+"700","Michigan State","@","Ohio State","W (10-7)",2011-10-01
+"702","Michigan State","","Wisconsin","W (37-31)",2011-10-22
+"703","Michigan State","@","Nebraska","L (3-24)",2011-10-29
+"704","Michigan State","","Minnesota","W (31-24)",2011-11-05
+"707","Michigan State","@","Northwestern","W (31-17)",2011-11-26
+"708","Michigan State","N","Wisconsin","L (39-42)",2011-12-03
+"710","Middle Tennessee State","@","Purdue","L (24-27)",2011-09-03
+"712","Middle Tennessee State","@","Troy","L (35-38)",2011-09-24
+"714","Middle Tennessee State","","Western Kentucky","L (33-36)",2011-10-06
+"717","Middle Tennessee State","@","Tennessee","L (0-24)",2011-11-05
+"721","Middle Tennessee State","@","North Texas","L (7-59)",2011-12-03
+"722","Minnesota","@","Southern California","L (17-19)",2011-09-03
+"723","Minnesota","","New Mexico State","L (21-28)",2011-09-10
+"725","Minnesota","","Non-Major","L (24-37)",2011-09-24
+"727","Minnesota","@","Purdue","L (17-45)",2011-10-08
+"728","Minnesota","","Nebraska","L (14-41)",2011-10-22
+"731","Minnesota","","Wisconsin","L (13-42)",2011-11-12
+"732","Minnesota","@","Northwestern","L (13-28)",2011-11-19
+"739","Mississippi State","@","Alabama-Birmingham","W (21-3)",2011-10-08
+"740","Mississippi State","","South Carolina","L (12-14)",2011-10-15
+"742","Mississippi State","","Non-Major","W (55-17)",2011-11-05
+"745","Mississippi State","","Mississippi","W (31-3)",2011-11-26
+"746","Mississippi State","N","Wake Forest","W (23-17)",2011-12-30
+"749","Missouri","","Non-Major","W (69-0)",2011-09-17
+"750","Missouri","@","Oklahoma","L (28-38)",2011-09-24
+"753","Missouri","","Oklahoma State","L (24-45)",2011-10-22
+"754","Missouri","@","Texas A&M","W (38-31)",2011-10-29
+"756","Missouri","","Texas","W (17-5)",2011-11-12
+"757","Missouri","","Texas Tech","W (31-27)",2011-11-19
+"759","Missouri","N","North Carolina","W (41-24)",2011-12-26
+"760","Navy","","Non-Major","W (40-17)",2011-09-03
+"761","Navy","@","Western Kentucky","W (40-14)",2011-09-10
+"762","Navy","@","South Carolina","L (21-24)",2011-09-17
+"764","Navy","","Southern Mississippi","L (35-63)",2011-10-08
+"765","Navy","@","Rutgers","L (20-21)",2011-10-15
+"767","Navy","@","Notre Dame","L (14-56)",2011-10-29
+"768","Navy","","Troy","W (42-14)",2011-11-05
+"769","Navy","@","Southern Methodist","W (24-17)",2011-11-12
+"770","Navy","@","San Jose State","L (24-27)",2011-11-19
+"772","Nebraska","","Non-Major","W (40-7)",2011-09-03
+"774","Nebraska","","Washington","W (51-38)",2011-09-17
+"775","Nebraska","@","Wyoming","W (38-14)",2011-09-24
+"776","Nebraska","@","Wisconsin","L (17-48)",2011-10-01
+"777","Nebraska","","Ohio State","W (34-27)",2011-10-08
+"780","Nebraska","","Northwestern","L (25-28)",2011-11-05
+"781","Nebraska","@","Penn State","W (17-14)",2011-11-12
+"784","Nebraska","N","South Carolina","L (13-30)",2012-01-02
+"785","Nevada","@","Oregon","L (20-69)",2011-09-10
+"786","Nevada","@","San Jose State","W (17-14)",2011-09-17
+"787","Nevada","@","Texas Tech","L (34-35)",2011-09-24
+"789","Nevada","","Nevada-Las Vegas","W (37-0)",2011-10-08
+"790","Nevada","","New Mexico","W (49-7)",2011-10-15
+"792","Nevada","@","New Mexico State","W (48-34)",2011-10-29
+"795","Nevada","@","Utah State","L (17-21)",2011-11-26
+"797","Nevada","N","Southern Mississippi","L (17-24)",2011-12-24
+"800","New Mexico","","Texas Tech","L (13-59)",2011-09-17
+"801","New Mexico","","Non-Major","L (45-48)",2011-09-24
+"802","New Mexico","","New Mexico State","L (28-42)",2011-10-01
+"804","New Mexico","@","Texas Christian","L (0-69)",2011-10-22
+"806","New Mexico","@","San Diego State","L (7-35)",2011-11-05
+"807","New Mexico","","Nevada-Las Vegas","W (21-14)",2011-11-12
+"808","New Mexico","@","Wyoming","L (10-31)",2011-11-19
+"810","New Mexico State","","Ohio","L (24-44)",2011-09-03
+"812","New Mexico State","","Texas-El Paso","L (10-16)",2011-09-17
+"813","New Mexico State","@","San Jose State","L (24-34)",2011-09-24
+"822","New Mexico State","","Utah State","L (21-24)",2011-12-03
+"823","North Carolina","","Non-Major","W (42-10)",2011-09-03
+"824","North Carolina","","Rutgers","W (24-22)",2011-09-10
+"825","North Carolina","","Virginia","W (28-17)",2011-09-17
+"831","North Carolina","","Wake Forest","W (49-24)",2011-10-29
+"832","North Carolina","@","North Carolina State","L (0-13)",2011-11-05
+"833","North Carolina","@","Virginia Tech","L (21-24)",2011-11-17
+"836","North Carolina State","","Non-Major","W (43-21)",2011-09-03
+"837","North Carolina State","@","Wake Forest","L (27-34)",2011-09-10
+"838","North Carolina State","","Non-Major","W (35-13)",2011-09-17
+"842","North Carolina State","@","Virginia","W (28-14)",2011-10-22
+"851","Northern Illinois","N","Wisconsin","L (7-49)",2011-09-17
+"852","Northern Illinois","","Non-Major","W (47-30)",2011-09-24
+"855","Northern Illinois","","Western Michigan","W (51-22)",2011-10-15
+"857","Northern Illinois","@","Toledo","W (63-60)",2011-11-01
+"861","Northern Illinois","N","Ohio","W (23-20)",2011-12-02
+"867","North Texas","@","Tulsa","L (24-41)",2011-10-01
+"872","North Texas","@","Troy","W (38-33)",2011-11-12
+"873","North Texas","","Western Kentucky","L (21-31)",2011-11-19
+"876","Northwestern","","Non-Major","W (42-21)",2011-09-10
+"881","Northwestern","","Penn State","L (24-34)",2011-10-22
+"884","Northwestern","","Rice","W (28-6)",2011-11-12
+"887","Northwestern","N","Texas A&M","L (22-33)",2011-12-31
+"888","Notre Dame","","South Florida","L (20-23)",2011-09-03
+"891","Notre Dame","@","Pittsburgh","W (15-12)",2011-09-24
+"892","Notre Dame","@","Purdue","W (38-10)",2011-10-01
+"894","Notre Dame","","Southern California","L (17-31)",2011-10-22
+"896","Notre Dame","@","Wake Forest","W (24-17)",2011-11-05
+"899","Notre Dame","@","Stanford","L (14-28)",2011-11-26
+"902","Ohio","","Non-Major","W (30-3)",2011-09-10
+"904","Ohio","@","Rutgers","L (26-38)",2011-09-24
+"909","Ohio","","Temple","W (35-31)",2011-11-02
+"914","Ohio","N","Utah State","W (24-23)",2011-12-17
+"916","Ohio State","","Toledo","W (27-22)",2011-09-10
+"922","Ohio State","","Wisconsin","W (33-29)",2011-10-29
+"924","Ohio State","@","Purdue","L (23-26)",2011-11-12
+"925","Ohio State","","Penn State","L (14-20)",2011-11-19
+"928","Oklahoma","","Tulsa","W (47-14)",2011-09-03
+"932","Oklahoma","N","Texas","W (55-17)",2011-10-08
+"934","Oklahoma","","Texas Tech","L (38-41)",2011-10-22
+"936","Oklahoma","","Texas A&M","W (41-25)",2011-11-05
+"939","Oklahoma","@","Oklahoma State","L (10-44)",2011-12-03
+"943","Oklahoma State","@","Tulsa","W (59-33)",2011-09-17
+"944","Oklahoma State","@","Texas A&M","W (30-29)",2011-09-24
+"946","Oklahoma State","@","Texas","W (38-26)",2011-10-15
+"950","Oklahoma State","@","Texas Tech","W (66-6)",2011-11-12
+"953","Oklahoma State","N","Stanford","W (41-38)",2012-01-02
+"955","Mississippi","","Non-Major","W (42-24)",2011-09-10
+"956","Mississippi","@","Vanderbilt","L (7-30)",2011-09-17
+"968","Oregon","","Non-Major","W (56-7)",2011-09-17
+"973","Oregon","","Washington State","W (43-28)",2011-10-29
+"974","Oregon","@","Washington","W (34-17)",2011-11-05
+"975","Oregon","@","Stanford","W (53-30)",2011-11-12
+"976","Oregon","","Southern California","L (35-38)",2011-11-19
+"977","Oregon","","Oregon State","W (49-21)",2011-11-26
+"978","Oregon","","UCLA","W (49-31)",2011-12-02
+"979","Oregon","N","Wisconsin","W (45-38)",2012-01-02
+"980","Oregon State","","Non-Major","L (28-29)",2011-09-03
+"981","Oregon State","@","Wisconsin","L (0-35)",2011-09-10
+"982","Oregon State","","UCLA","L (19-27)",2011-09-24
+"986","Oregon State","@","Washington State","W (44-21)",2011-10-22
+"987","Oregon State","@","Utah","L (8-27)",2011-10-29
+"988","Oregon State","","Stanford","L (13-38)",2011-11-05
+"990","Oregon State","","Washington","W (38-21)",2011-11-19
+"992","Penn State","","Non-Major","W (41-7)",2011-09-03
+"994","Penn State","@","Temple","W (14-10)",2011-09-17
+"998","Penn State","","Purdue","W (23-18)",2011-10-15
+"1003","Penn State","@","Wisconsin","L (7-45)",2011-11-26
+"1006","Pittsburgh","","Non-Major","W (35-29)",2011-09-10
+"1009","Pittsburgh","","South Florida","W (44-17)",2011-09-29
+"1010","Pittsburgh","@","Rutgers","L (10-34)",2011-10-08
+"1011","Pittsburgh","","Utah","L (14-26)",2011-10-15
+"1015","Pittsburgh","@","West Virginia","L (20-21)",2011-11-25
+"1016","Pittsburgh","","Syracuse","W (33-20)",2011-12-03
+"1017","Pittsburgh","N","Southern Methodist","L (6-28)",2012-01-07
+"1019","Purdue","@","Rice","L (22-24)",2011-09-10
+"1020","Purdue","","Non-Major","W (59-0)",2011-09-17
+"1026","Purdue","@","Wisconsin","L (17-62)",2011-11-05
+"1030","Purdue","N","Western Michigan","W (37-32)",2011-12-27
+"1031","Rice","@","Texas","L (9-34)",2011-09-03
+"1034","Rice","@","Southern Mississippi","L (24-48)",2011-10-01
+"1037","Rice","","Tulsa","L (20-38)",2011-10-22
+"1039","Rice","","Texas-El Paso","W (41-37)",2011-11-05
+"1041","Rice","","Tulane","W (19-7)",2011-11-19
+"1042","Rice","@","Southern Methodist","L (24-27)",2011-11-26
+"1043","Rutgers","","Non-Major","W (48-0)",2011-09-01
+"1046","Rutgers","@","Syracuse","W (19-16)",2011-10-01
+"1050","Rutgers","","West Virginia","L (31-41)",2011-10-29
+"1051","Rutgers","","South Florida","W (20-17)",2011-11-05
+"1056","San Diego State","","Non-Major","W (49-21)",2011-09-03
+"1058","San Diego State","","Washington State","W (42-24)",2011-09-17
+"1060","San Diego State","","Texas Christian","L (14-27)",2011-10-08
+"1062","San Diego State","","Wyoming","L (27-30)",2011-10-29
+"1066","San Diego State","@","Nevada-Las Vegas","W (31-14)",2011-11-26
+"1069","San Jose State","@","Stanford","L (3-57)",2011-09-03
+"1070","San Jose State","@","UCLA","L (17-27)",2011-09-10
+"1078","San Jose State","@","Utah State","L (33-34)",2011-11-12
+"1081","Southern Methodist","@","Texas A&M","L (14-46)",2011-09-04
+"1082","Southern Methodist","","Texas-El Paso","W (28-17)",2011-09-10
+"1083","Southern Methodist","","Non-Major","W (40-7)",2011-09-17
+"1085","Southern Methodist","@","Texas Christian","W (40-33)",2011-10-01
+"1086","Southern Methodist","","Central Florida","W (38-17)",2011-10-15
+"1087","Southern Methodist","@","Southern Mississippi","L (3-27)",2011-10-22
+"1088","Southern Methodist","@","Tulsa","L (7-38)",2011-10-29
+"1089","Southern Methodist","","Tulane","W (45-24)",2011-11-05
+"1097","South Carolina","","Vanderbilt","W (21-3)",2011-09-24
+"1101","South Carolina","@","Tennessee","W (14-3)",2011-10-29
+"1104","South Carolina","","Non-Major","W (41-20)",2011-11-19
+"1109","Southern Mississippi","","Non-Major","W (52-6)",2011-09-17
+"1110","Southern Mississippi","@","Virginia","W (30-24)",2011-09-24
+"1114","Southern Mississippi","@","Texas-El Paso","W (31-13)",2011-10-29
+"1116","Southern Mississippi","","Central Florida","W (30-29)",2011-11-12
+"1117","Southern Mississippi","@","Alabama-Birmingham","L (31-34)",2011-11-17
+"1123","South Florida","","Non-Major","W (70-17)",2011-09-17
+"1124","South Florida","","Texas-El Paso","W (52-24)",2011-09-24
+"1129","South Florida","@","Syracuse","W (37-17)",2011-11-11
+"1132","South Florida","","West Virginia","L (27-30)",2011-12-01
+"1136","Stanford","","UCLA","W (45-19)",2011-10-01
+"1138","Stanford","@","Washington State","W (44-14)",2011-10-15
+"1139","Stanford","","Washington","W (65-21)",2011-10-22
+"1140","Stanford","@","Southern California","W (56-48)",2011-10-29
+"1146","Syracuse","","Wake Forest","W (36-29)",2011-09-01
+"1147","Syracuse","","Non-Major","W (21-14)",2011-09-10
+"1148","Syracuse","@","Southern California","L (17-38)",2011-09-17
+"1149","Syracuse","","Toledo","W (33-30)",2011-09-24
+"1151","Syracuse","@","Tulane","W (37-34)",2011-10-08
+"1152","Syracuse","","West Virginia","W (49-23)",2011-10-21
+"1158","Temple","","Non-Major","W (42-7)",2011-09-01
+"1162","Temple","","Toledo","L (13-36)",2011-10-01
+"1170","Temple","N","Wyoming","W (37-15)",2011-12-17
+"1171","Tennessee","","Non-Major","W (42-16)",2011-09-03
+"1181","Tennessee","","Vanderbilt","W (27-21)",2011-11-19
+"1187","Texas A&M","@","Texas Tech","W (45-40)",2011-10-08
+"1194","Texas A&M","","Texas","L (25-27)",2011-11-24
+"1199","Texas Christian","","Non-Major","W (55-13)",2011-09-24
+"1204","Texas Christian","@","Wyoming","W (31-20)",2011-11-05
+"1207","Texas Christian","","Nevada-Las Vegas","W (56-9)",2011-12-03
+"1211","Texas","@","UCLA","W (49-20)",2011-09-17
+"1216","Texas","","Texas Tech","W (52-20)",2011-11-05
+"1222","Texas Tech","","Non-Major","W (50-10)",2011-09-03
+"1234","Toledo","","Non-Major","W (58-22)",2011-09-01
+"1243","Toledo","","Western Michigan","W (66-63)",2011-11-08
+"1250","Troy","","Alabama-Birmingham","W (24-23)",2011-10-01
+"1257","Troy","@","Western Kentucky","L (18-41)",2011-11-26
+"1259","Tulane","","Non-Major","W (47-33)",2011-09-03
+"1260","Tulane","","Tulsa","L (3-31)",2011-09-10
+"1261","Tulane","@","Alabama-Birmingham","W (49-10)",2011-09-17
+"1265","Tulane","","Texas-El Paso","L (7-44)",2011-10-15
+"1277","Tulsa","","Alabama-Birmingham","W (37-20)",2011-10-15
+"1280","Tulsa","@","Central Florida","W (24-17)",2011-11-03
+"1282","Tulsa","@","Texas-El Paso","W (57-28)",2011-11-19
+"1291","Alabama-Birmingham","","Central Florida","W (26-24)",2011-10-20
+"1297","Central Florida","","Non-Major","W (62-0)",2011-09-03
+"1308","Central Florida","","Texas-El Paso","W (31-14)",2011-11-25
+"1314","UCLA","","Washington State","W (28-25)",2011-10-08
+"1318","UCLA","@","Utah","L (6-31)",2011-11-12
+"1320","UCLA","@","Southern California","L (0-50)",2011-11-26
+"1323","Nevada-Las Vegas","@","Wisconsin","L (17-51)",2011-09-01
+"1324","Nevada-Las Vegas","@","Washington State","L (7-59)",2011-09-10
+"1326","Nevada-Las Vegas","","Non-Major","L (16-41)",2011-09-24
+"1328","Nevada-Las Vegas","@","Wyoming","L (14-41)",2011-10-15
+"1336","Southern California","","Utah","W (23-14)",2011-09-10
+"1344","Southern California","","Washington","W (40-17)",2011-11-12
+"1347","Utah","","Non-Major","W (27-10)",2011-09-01
+"1350","Utah","","Washington","L (14-31)",2011-10-01
+"1357","Utah","@","Washington State","W (30-27)",2011-11-19
+"1361","Utah State","","Non-Major","W (54-17)",2011-09-10
+"1364","Utah State","","Wyoming","W (63-19)",2011-10-08
+"1373","Texas-El Paso","","Non-Major","W (31-24)",2011-09-03
+"1385","Vanderbilt","","Non-Major","W (45-14)",2011-09-03
+"1396","Vanderbilt","@","Wake Forest","W (41-7)",2011-11-26
+"1398","Virginia","","Non-Major","W (40-3)",2011-09-03
+"1409","Virginia","","Virginia Tech","L (0-38)",2011-11-26
+"1411","Virginia Tech","","Non-Major","W (66-13)",2011-09-03
+"1417","Virginia Tech","@","Wake Forest","W (38-17)",2011-10-15
+"1427","Wake Forest","","Non-Major","W (48-5)",2011-09-17
+"1438","Washington","","Non-Major","W (30-27)",2011-09-03
+"1449","Washington","","Washington State","W (38-21)",2011-11-26
+"1451","Washington State","","Non-Major","W (64-21)",2011-09-03
+"1465","Western Kentucky","","Non-Major","L (16-44)",2011-09-17
+"1476","Western Michigan","","Non-Major","W (38-7)",2011-09-10
+"1489","West Virginia","","Non-Major","W (55-12)",2011-09-10
+"1504","Wisconsin","","Non-Major","W (59-10)",2011-09-24
+"1515","Wyoming","","Non-Major","W (35-32)",2011-09-03
+"1516","Wyoming","","Non-Major","W (45-10)",2011-09-10
