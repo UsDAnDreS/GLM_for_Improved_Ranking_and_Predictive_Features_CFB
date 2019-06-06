@@ -1,0 +1,685 @@
+"","Team","X","Opponent","Result","Date"
+"1","Air Force","","Oklahoma","L (3-44)",2001-09-01
+"2","Air Force","","Non-Major","W (42-0)",2001-09-08
+"3","Air Force","@","San Diego State","W (45-21)",2001-09-29
+"4","Air Force","@","Navy","W (24-18)",2001-10-06
+"5","Air Force","","Wyoming","W (24-13)",2001-10-13
+"6","Air Force","@","Brigham Young","L (33-63)",2001-10-20
+"7","Air Force","@","New Mexico","L (33-52)",2001-10-27
+"8","Air Force","","Army","W (34-24)",2001-11-03
+"9","Air Force","@","Colorado State","L (21-28)",2001-11-08
+"10","Air Force","","Nevada-Las Vegas","L (10-34)",2001-11-17
+"11","Air Force","@","Hawaii","L (30-52)",2001-11-24
+"12","Air Force","","Utah","W (38-37)",2001-12-01
+"13","Akron","","Ohio","W (31-29)",2001-08-30
+"14","Akron","@","Ohio State","L (14-28)",2001-09-08
+"15","Akron","@","Purdue","L (14-33)",2001-09-22
+"16","Akron","","Kent State","W (14-10)",2001-09-29
+"17","Akron","@","Western Michigan","L (14-31)",2001-10-06
+"18","Akron","@","Miami (OH)","L (27-30)",2001-10-13
+"19","Akron","","Bowling Green State","L (11-16)",2001-10-20
+"20","Akron","@","Marshall","L (33-50)",2001-10-27
+"21","Akron","@","Central Florida","L (17-57)",2001-11-03
+"22","Akron","@","Buffalo","W (41-14)",2001-11-17
+"23","Akron","","Eastern Michigan","W (65-62)",2001-11-24
+"24","Alabama","","UCLA","L (17-20)",2001-09-01
+"25","Alabama","@","Vanderbilt","W (12-9)",2001-09-08
+"26","Alabama","","Arkansas","W (31-10)",2001-09-22
+"27","Alabama","@","South Carolina","L (36-37)",2001-09-29
+"28","Alabama","","Texas-El Paso","W (56-7)",2001-10-06
+"29","Alabama","@","Mississippi","L (24-27)",2001-10-13
+"30","Alabama","","Tennessee","L (24-35)",2001-10-20
+"31","Alabama","","Louisiana State","L (21-35)",2001-11-03
+"32","Alabama","","Mississippi State","W (24-17)",2001-11-10
+"33","Alabama","@","Auburn","W (31-7)",2001-11-17
+"34","Alabama","","Southern Mississippi","W (28-15)",2001-11-29
+"35","Arizona","@","San Diego State","W (23-10)",2001-08-30
+"36","Arizona","","Idaho","W (36-29)",2001-09-08
+"37","Arizona","","Nevada-Las Vegas","W (38-21)",2001-09-22
+"38","Arizona","","Washington State","L (21-48)",2001-09-29
+"39","Arizona","","Oregon","L (28-63)",2001-10-06
+"40","Arizona","@","Oregon State","L (3-38)",2001-10-13
+"41","Arizona","@","Washington","L (28-31)",2001-10-20
+"42","Arizona","","Southern California","L (34-41)",2001-10-27
+"43","Arizona","@","California","W (38-24)",2001-11-03
+"44","Arizona","","Stanford","L (37-51)",2001-11-10
+"45","Arizona","@","Arizona State","W (34-21)",2001-11-23
+"46","Arizona State","","San Diego State","W (38-7)",2001-09-08
+"47","Arizona State","@","Stanford","L (28-51)",2001-09-22
+"48","Arizona State","","San Jose State","W (53-15)",2001-09-29
+"49","Arizona State","","Louisiana","W (63-27)",2001-10-06
+"50","Arizona State","@","Southern California","L (17-48)",2001-10-13
+"51","Arizona State","","Oregon State","W (41-24)",2001-10-20
+"52","Arizona State","","Washington","L (31-33)",2001-10-27
+"53","Arizona State","@","Oregon","L (24-42)",2001-11-03
+"54","Arizona State","","Washington State","L (16-28)",2001-11-10
+"56","Arizona State","@","UCLA","L (42-52)",2001-12-01
+"57","Arkansas","","Nevada-Las Vegas","W (14-10)",2001-08-30
+"58","Arkansas","","Tennessee","L (3-13)",2001-09-08
+"60","Arkansas","@","Georgia","L (23-34)",2001-09-29
+"61","Arkansas","","Non-Major","W (42-19)",2001-10-06
+"62","Arkansas","","South Carolina","W (10-7)",2001-10-13
+"63","Arkansas","","Auburn","W (42-17)",2001-10-27
+"64","Arkansas","@","Mississippi","W (58-56)",2001-11-03
+"65","Arkansas","","Central Florida","W (27-20)",2001-11-10
+"66","Arkansas","","Mississippi State","W (24-21)",2001-11-17
+"67","Arkansas","@","Louisiana State","L (38-41)",2001-11-23
+"68","Arkansas State","@","Georgia","L (17-45)",2001-09-01
+"69","Arkansas State","@","Baylor","L (3-24)",2001-09-08
+"70","Arkansas State","","Non-Major","L (28-31)",2001-09-22
+"71","Arkansas State","","Mississippi","L (17-35)",2001-10-06
+"72","Arkansas State","","Louisiana","W (26-20)",2001-10-13
+"73","Arkansas State","@","North Texas","L (0-45)",2001-10-20
+"74","Arkansas State","","Idaho","W (34-31)",2001-10-27
+"75","Arkansas State","@","Middle Tennessee State","L (6-54)",2001-11-03
+"76","Arkansas State","@","New Mexico State","L (17-28)",2001-11-10
+"77","Arkansas State","","Louisiana-Monroe","L (7-16)",2001-11-17
+"78","Arkansas State","","Non-Major","L (22-28)",2001-11-22
+"79","Army","","Cincinnati","L (21-24)",2001-09-08
+"80","Army","@","Alabama-Birmingham","L (3-55)",2001-09-22
+"81","Army","@","Boston College","L (10-31)",2001-09-29
+"82","Army","","Houston","W (28-14)",2001-10-06
+"83","Army","","East Carolina","L (26-49)",2001-10-13
+"84","Army","@","Texas Christian","L (20-38)",2001-10-20
+"85","Army","","Tulane","W (42-35)",2001-10-27
+"87","Army","","Buffalo","L (19-26)",2001-11-10
+"88","Army","@","Memphis","L (10-42)",2001-11-17
+"89","Army","N","Navy","W (26-17)",2001-12-01
+"90","Auburn","","Ball State","W (30-0)",2001-09-01
+"91","Auburn","","Mississippi","W (27-21)",2001-09-08
+"92","Auburn","@","Syracuse","L (14-31)",2001-09-22
+"93","Auburn","@","Vanderbilt","W (24-21)",2001-09-29
+"94","Auburn","","Mississippi State","W (16-14)",2001-10-06
+"95","Auburn","","Florida","W (23-20)",2001-10-13
+"96","Auburn","","Louisiana Tech","W (48-41)",2001-10-20
+"98","Auburn","@","Georgia","W (24-17)",2001-11-10
+"100","Auburn","@","Louisiana State","L (14-27)",2001-12-01
+"102","Ball State","@","Kentucky","L (20-28)",2001-09-08
+"103","Ball State","","Non-Major","L (39-42)",2001-09-22
+"104","Ball State","","Miami (OH)","L (20-28)",2001-09-29
+"105","Ball State","@","Eastern Michigan","W (35-14)",2001-10-13
+"106","Ball State","","Toledo","W (24-20)",2001-10-20
+"107","Ball State","@","Connecticut","W (10-5)",2001-10-27
+"108","Ball State","","Central Michigan","W (38-34)",2001-11-03
+"109","Ball State","","Kent State","L (18-31)",2001-11-10
+"110","Ball State","@","Northern Illinois","L (29-33)",2001-11-17
+"111","Ball State","@","Western Michigan","W (35-31)",2001-11-24
+"113","Baylor","","New Mexico","W (16-13)",2001-09-22
+"114","Baylor","@","Iowa State","L (0-41)",2001-09-29
+"115","Baylor","@","Texas A&M","L (10-16)",2001-10-06
+"116","Baylor","","Nebraska","L (7-48)",2001-10-13
+"117","Baylor","@","Oklahoma","L (17-33)",2001-10-20
+"118","Baylor","","Texas Tech","L (19-63)",2001-10-27
+"119","Baylor","","Texas","L (10-49)",2001-11-03
+"120","Baylor","@","Missouri","L (24-41)",2001-11-10
+"121","Baylor","","Oklahoma State","L (22-38)",2001-11-17
+"122","Baylor","","Non-Major","W (56-12)",2001-11-24
+"123","Boise State","@","South Carolina","L (13-32)",2001-09-01
+"124","Boise State","","Washington State","L (20-41)",2001-09-08
+"125","Boise State","","Texas-El Paso","W (42-17)",2001-09-22
+"126","Boise State","@","Idaho","W (45-13)",2001-09-29
+"127","Boise State","@","Rice","L (14-45)",2001-10-06
+"128","Boise State","","Tulsa","W (41-10)",2001-10-13
+"129","Boise State","@","Fresno State","W (35-30)",2001-10-19
+"130","Boise State","","Nevada","W (49-7)",2001-10-27
+"131","Boise State","@","Louisiana Tech","L (42-48)",2001-11-03
+"132","Boise State","@","Hawaii","W (28-21)",2001-11-10
+"133","Boise State","","San Jose State","W (56-6)",2001-11-17
+"134","Boise State","","Central Michigan","W (26-10)",2001-11-24
+"135","Boston College","","West Virginia","W (34-10)",2001-09-01
+"136","Boston College","@","Stanford","L (22-38)",2001-09-08
+"137","Boston College","@","Navy","W (38-21)",2001-09-22
+"139","Boston College","","Temple","W (23-10)",2001-10-06
+"140","Boston College","@","Virginia Tech","L (20-34)",2001-10-13
+"141","Boston College","","Pittsburgh","W (45-7)",2001-10-20
+"142","Boston College","","Notre Dame","W (21-17)",2001-10-27
+"143","Boston College","","Miami (FL)","L (7-18)",2001-11-10
+"144","Boston College","@","Rutgers","W (38-7)",2001-11-17
+"145","Boston College","@","Syracuse","L (28-39)",2001-11-24
+"146","Bowling Green State","@","Missouri","W (20-13)",2001-09-01
+"147","Bowling Green State","","Buffalo","W (35-0)",2001-09-08
+"148","Bowling Green State","","Temple","W (42-23)",2001-09-22
+"149","Bowling Green State","@","Marshall","L (31-37)",2001-09-29
+"150","Bowling Green State","","Kent State","W (24-7)",2001-10-06
+"151","Bowling Green State","@","Western Michigan","L (28-37)",2001-10-13
+"153","Bowling Green State","","Miami (OH)","L (21-24)",2001-11-03
+"154","Bowling Green State","@","Ohio","W (17-0)",2001-11-10
+"155","Bowling Green State","@","Northwestern","W (43-42)",2001-11-17
+"156","Bowling Green State","","Toledo","W (56-21)",2001-11-23
+"157","Brigham Young","","Tulane","W (70-35)",2001-08-25
+"158","Brigham Young","","Nevada","W (52-7)",2001-09-01
+"159","Brigham Young","@","California","W (44-16)",2001-09-08
+"160","Brigham Young","@","Nevada-Las Vegas","W (35-31)",2001-09-29
+"161","Brigham Young","","Utah State","W (54-34)",2001-10-05
+"162","Brigham Young","@","New Mexico","W (24-20)",2001-10-13
+"164","Brigham Young","@","San Diego State","W (59-21)",2001-10-27
+"165","Brigham Young","","Colorado State","W (56-34)",2001-11-01
+"166","Brigham Young","@","Wyoming","W (41-34)",2001-11-10
+"167","Brigham Young","","Utah","W (24-21)",2001-11-17
+"168","Brigham Young","@","Mississippi State","W (41-38)",2001-12-01
+"169","Brigham Young","@","Hawaii","L (45-72)",2001-12-08
+"170","Buffalo","","Rutgers","L (15-31)",2001-08-30
+"172","Buffalo","@","Connecticut","W (37-20)",2001-09-22
+"173","Buffalo","","Central Michigan","L (8-16)",2001-09-29
+"174","Buffalo","@","Miami (OH)","L (14-31)",2001-10-06
+"175","Buffalo","","Marshall","L (14-34)",2001-10-13
+"176","Buffalo","@","Kent State","L (13-35)",2001-10-20
+"177","Buffalo","@","Eastern Michigan","L (20-24)",2001-10-27
+"178","Buffalo","","Ohio","W (44-0)",2001-11-03
+"181","California","","Illinois","L (17-44)",2001-09-01
+"183","California","@","Washington State","L (20-51)",2001-09-22
+"184","California","","Washington","L (28-31)",2001-09-29
+"185","California","","Oregon","L (7-48)",2001-10-13
+"186","California","@","UCLA","L (17-56)",2001-10-20
+"187","California","@","Oregon State","L (10-19)",2001-10-27
+"189","California","","Southern California","L (14-55)",2001-11-10
+"190","California","@","Stanford","L (28-35)",2001-11-17
+"191","California","@","Rutgers","W (20-10)",2001-11-23
+"192","Central Michigan","","Non-Major","W (42-28)",2001-08-30
+"193","Central Michigan","@","Michigan State","L (21-35)",2001-09-08
+"194","Central Michigan","","Toledo","L (28-52)",2001-09-22
+"196","Central Michigan","","Ohio","L (3-34)",2001-10-13
+"197","Central Michigan","@","Marshall","L (21-42)",2001-10-20
+"198","Central Michigan","","Northern Illinois","L (24-33)",2001-10-27
+"200","Central Michigan","","Eastern Michigan","W (35-30)",2001-11-10
+"201","Central Michigan","@","Western Michigan","L (17-20)",2001-11-17
+"203","Cincinnati","","Purdue","L (14-19)",2001-09-02
+"205","Cincinnati","@","Miami (OH)","L (14-21)",2001-09-22
+"206","Cincinnati","","Tulane","W (46-33)",2001-10-06
+"207","Cincinnati","@","Alabama-Birmingham","W (31-17)",2001-10-13
+"208","Cincinnati","@","Houston","W (29-28)",2001-10-20
+"209","Cincinnati","","Louisville","L (13-28)",2001-10-27
+"210","Cincinnati","","Connecticut","W (45-28)",2001-11-03
+"211","Cincinnati","","East Carolina","L (26-28)",2001-11-10
+"212","Cincinnati","@","Memphis","W (36-34)",2001-11-24
+"213","Cincinnati","","Louisiana-Monroe","W (42-10)",2001-12-01
+"214","Clemson","","Central Florida","W (21-13)",2001-09-01
+"215","Clemson","","Non-Major","W (38-14)",2001-09-08
+"216","Clemson","","Virginia","L (24-26)",2001-09-22
+"217","Clemson","@","Georgia Tech","W (47-44)",2001-09-29
+"218","Clemson","@","North Carolina State","W (45-37)",2001-10-13
+"219","Clemson","","North Carolina","L (3-38)",2001-10-20
+"220","Clemson","@","Wake Forest","W (21-14)",2001-10-27
+"221","Clemson","","Florida State","L (27-41)",2001-11-03
+"222","Clemson","@","Maryland","L (20-37)",2001-11-10
+"223","Clemson","@","South Carolina","L (15-20)",2001-11-17
+"224","Clemson","","Duke","W (59-31)",2001-12-01
+"225","Colorado","","Fresno State","L (22-24)",2001-08-26
+"226","Colorado","N","Colorado State","W (41-14)",2001-09-01
+"227","Colorado","","San Jose State","W (51-15)",2001-09-08
+"228","Colorado","","Kansas","W (27-16)",2001-09-22
+"229","Colorado","@","Kansas State","W (16-6)",2001-10-06
+"230","Colorado","","Texas A&M","W (31-21)",2001-10-13
+"231","Colorado","@","Texas","L (7-41)",2001-10-20
+"232","Colorado","@","Oklahoma State","W (22-19)",2001-10-27
+"233","Colorado","","Missouri","W (38-24)",2001-11-03
+"234","Colorado","@","Iowa State","W (40-27)",2001-11-10
+"235","Colorado","","Nebraska","W (62-36)",2001-11-23
+"236","Colorado","N","Texas","W (39-37)",2001-12-01
+"238","Colorado State","","Nevada","W (35-18)",2001-09-08
+"239","Colorado State","","San Diego State","L (7-14)",2001-09-22
+"240","Colorado State","@","Wyoming","W (42-14)",2001-09-29
+"241","Colorado State","@","Louisville","L (2-7)",2001-10-04
+"242","Colorado State","","Fresno State","L (22-25)",2001-10-13
+"243","Colorado State","@","Nevada-Las Vegas","W (26-24)",2001-10-20
+"244","Colorado State","","Utah","W (19-17)",2001-10-27
+"247","Colorado State","@","New Mexico","W (24-17)",2001-11-17
+"248","Connecticut","@","Virginia Tech","L (10-52)",2001-09-01
+"249","Connecticut","","Non-Major","L (17-35)",2001-09-08
+"251","Connecticut","@","Rutgers","W (20-19)",2001-09-29
+"252","Connecticut","","Eastern Michigan","W (19-0)",2001-10-06
+"253","Connecticut","@","South Florida","L (21-40)",2001-10-13
+"256","Connecticut","","Utah State","L (31-38)",2001-11-10
+"257","Connecticut","@","Middle Tennessee State","L (14-38)",2001-11-17
+"258","Connecticut","@","Temple","L (7-56)",2001-11-24
+"259","Duke","","Florida State","L (13-55)",2001-09-01
+"260","Duke","@","Rice","L (13-15)",2001-09-08
+"261","Duke","","Northwestern","L (7-44)",2001-09-22
+"262","Duke","@","Virginia","L (10-31)",2001-09-29
+"263","Duke","","Georgia Tech","L (10-37)",2001-10-06
+"264","Duke","","Wake Forest","L (35-42)",2001-10-13
+"265","Duke","@","Maryland","L (17-59)",2001-10-20
+"266","Duke","","Vanderbilt","L (28-42)",2001-10-27
+"267","Duke","","North Carolina State","L (31-55)",2001-11-03
+"268","Duke","@","North Carolina","L (17-52)",2001-11-17
+"270","East Carolina","","Wake Forest","L (19-21)",2001-09-01
+"271","East Carolina","@","Tulane","W (51-24)",2001-09-08
+"272","East Carolina","","Non-Major","W (38-23)",2001-09-22
+"273","East Carolina","@","Syracuse","L (30-44)",2001-09-29
+"274","East Carolina","@","North Carolina","L (21-24)",2001-10-06
+"276","East Carolina","","Memphis","W (32-11)",2001-10-20
+"277","East Carolina","@","Texas Christian","W (37-30)",2001-10-30
+"279","East Carolina","","Louisville","L (34-39)",2001-11-15
+"280","East Carolina","","Southern Mississippi","L (21-28)",2001-11-23
+"281","Eastern Michigan","","Non-Major","W (16-12)",2001-09-01
+"282","Eastern Michigan","@","Maryland","L (3-50)",2001-09-08
+"283","Eastern Michigan","","Non-Major","L (14-21)",2001-09-22
+"284","Eastern Michigan","","Western Michigan","L (10-31)",2001-09-29
+"288","Eastern Michigan","@","Northern Illinois","L (17-40)",2001-11-03
+"290","Eastern Michigan","@","Toledo","L (7-28)",2001-11-17
+"292","Florida","","Marshall","W (49-14)",2001-09-01
+"293","Florida","","Louisiana-Monroe","W (55-6)",2001-09-08
+"294","Florida","@","Kentucky","W (44-10)",2001-09-22
+"295","Florida","","Mississippi State","W (52-0)",2001-09-29
+"296","Florida","@","Louisiana State","W (44-15)",2001-10-06
+"298","Florida","N","Georgia","W (24-10)",2001-10-27
+"299","Florida","","Vanderbilt","W (71-13)",2001-11-03
+"300","Florida","@","South Carolina","W (54-17)",2001-11-10
+"301","Florida","","Florida State","W (37-13)",2001-11-17
+"302","Florida","","Tennessee","L (32-34)",2001-12-01
+"304","Florida State","","Alabama-Birmingham","W (29-7)",2001-09-08
+"305","Florida State","@","North Carolina","L (9-41)",2001-09-22
+"306","Florida State","","Wake Forest","W (48-24)",2001-09-29
+"307","Florida State","","Miami (FL)","L (27-49)",2001-10-13
+"308","Florida State","@","Virginia","W (43-7)",2001-10-20
+"309","Florida State","","Maryland","W (52-31)",2001-10-27
+"311","Florida State","","North Carolina State","L (28-34)",2001-11-10
+"313","Florida State","","Georgia Tech","W (28-17)",2001-12-01
+"315","Fresno State","","Oregon State","W (44-24)",2001-09-02
+"316","Fresno State","@","Wisconsin","W (32-20)",2001-09-08
+"317","Fresno State","@","Tulsa","W (37-18)",2001-09-22
+"318","Fresno State","","Louisiana Tech","W (38-28)",2001-09-29
+"321","Fresno State","@","Hawaii","L (34-38)",2001-10-26
+"322","Fresno State","","Rice","W (52-24)",2001-11-03
+"323","Fresno State","@","Southern Methodist","W (38-13)",2001-11-10
+"324","Fresno State","@","Nevada","W (61-14)",2001-11-17
+"325","Fresno State","","San Jose State","W (40-21)",2001-11-23
+"326","Fresno State","","Utah State","W (70-21)",2001-12-01
+"328","Georgia","","South Carolina","L (9-14)",2001-09-08
+"330","Georgia","@","Tennessee","W (26-24)",2001-10-06
+"331","Georgia","@","Vanderbilt","W (30-14)",2001-10-13
+"332","Georgia","","Kentucky","W (43-29)",2001-10-20
+"335","Georgia","@","Mississippi","W (35-15)",2001-11-17
+"336","Georgia","@","Georgia Tech","W (31-17)",2001-11-24
+"337","Georgia","","Houston","W (35-7)",2001-12-01
+"338","Georgia Tech","N","Syracuse","W (13-7)",2001-08-26
+"339","Georgia Tech","","Non-Major","W (35-7)",2001-09-01
+"340","Georgia Tech","@","Navy","W (70-7)",2001-09-08
+"343","Georgia Tech","","Maryland","L (17-20)",2001-10-11
+"344","Georgia Tech","","North Carolina State","W (27-17)",2001-10-20
+"345","Georgia Tech","","North Carolina","W (28-21)",2001-11-01
+"346","Georgia Tech","@","Virginia","L (38-39)",2001-11-10
+"347","Georgia Tech","@","Wake Forest","W (38-33)",2001-11-17
+"350","Hawaii","","Non-Major","W (30-12)",2001-09-08
+"351","Hawaii","@","Nevada","L (20-28)",2001-09-22
+"352","Hawaii","","Rice","L (24-27)",2001-09-29
+"353","Hawaii","@","Southern Methodist","W (38-31)",2001-10-06
+"354","Hawaii","","Texas-El Paso","W (66-7)",2001-10-13
+"355","Hawaii","@","Tulsa","W (36-15)",2001-10-20
+"357","Hawaii","","San Jose State","W (34-10)",2001-11-03
+"359","Hawaii","","Miami (OH)","W (52-51)",2001-11-17
+"362","Houston","","Rice","L (14-21)",2001-09-01
+"363","Houston","","Texas","L (26-53)",2001-09-22
+"364","Houston","","Texas Christian","L (17-34)",2001-09-29
+"366","Houston","","Memphis","L (33-52)",2001-10-13
+"368","Houston","@","Southern Mississippi","L (14-58)",2001-10-27
+"369","Houston","@","South Florida","L (6-45)",2001-11-03
+"370","Houston","@","Louisville","L (10-34)",2001-11-10
+"371","Houston","","Alabama-Birmingham","L (21-43)",2001-11-17
+"373","Idaho","@","Washington State","L (7-36)",2001-08-30
+"375","Idaho","@","Washington","L (3-53)",2001-09-22
+"377","Idaho","@","Middle Tennessee State","L (58-70)",2001-10-06
+"378","Idaho","@","New Mexico State","L (39-46)",2001-10-13
+"379","Idaho","","Louisiana","L (37-54)",2001-10-20
+"381","Idaho","","Louisiana-Monroe","W (42-38)",2001-11-03
+"382","Idaho","","North Texas","L (27-50)",2001-11-17
+"383","Idaho","@","Non-Major","L (27-33)",2001-11-24
+"385","Illinois","","Northern Illinois","W (17-12)",2001-09-08
+"386","Illinois","","Louisville","W (34-10)",2001-09-22
+"387","Illinois","@","Michigan","L (20-45)",2001-09-29
+"388","Illinois","","Minnesota","W (25-14)",2001-10-06
+"389","Illinois","@","Indiana","W (35-14)",2001-10-13
+"390","Illinois","","Wisconsin","W (42-35)",2001-10-20
+"391","Illinois","@","Purdue","W (38-13)",2001-11-03
+"392","Illinois","","Penn State","W (33-28)",2001-11-10
+"393","Illinois","@","Ohio State","W (34-22)",2001-11-17
+"394","Illinois","","Northwestern","W (34-28)",2001-11-22
+"395","Indiana","@","North Carolina State","L (14-35)",2001-09-06
+"396","Indiana","","Utah","L (26-28)",2001-09-22
+"397","Indiana","","Ohio State","L (14-27)",2001-09-29
+"398","Indiana","@","Wisconsin","W (63-32)",2001-10-06
+"400","Indiana","@","Iowa","L (28-42)",2001-10-20
+"401","Indiana","","Northwestern","W (56-21)",2001-11-03
+"402","Indiana","@","Michigan State","W (37-28)",2001-11-10
+"403","Indiana","@","Penn State","L (14-28)",2001-11-17
+"404","Indiana","","Purdue","W (13-7)",2001-11-24
+"405","Indiana","","Kentucky","W (26-15)",2001-12-01
+"406","Iowa","","Kent State","W (51-0)",2001-09-01
+"407","Iowa","","Miami (OH)","W (44-19)",2001-09-08
+"408","Iowa","","Penn State","W (24-18)",2001-09-29
+"409","Iowa","@","Purdue","L (14-23)",2001-10-06
+"410","Iowa","@","Michigan State","L (28-31)",2001-10-13
+"412","Iowa","","Michigan","L (26-32)",2001-10-27
+"413","Iowa","@","Wisconsin","L (28-34)",2001-11-03
+"414","Iowa","@","Northwestern","W (59-16)",2001-11-10
+"415","Iowa","","Minnesota","W (42-24)",2001-11-17
+"416","Iowa","@","Iowa State","L (14-17)",2001-11-24
+"417","Iowa State","","Non-Major","W (45-0)",2001-09-08
+"418","Iowa State","@","Ohio","W (31-28)",2001-09-22
+"420","Iowa State","@","Nebraska","L (14-48)",2001-10-06
+"421","Iowa State","@","Missouri","W (20-14)",2001-10-13
+"422","Iowa State","","Oklahoma State","W (28-14)",2001-10-20
+"423","Iowa State","@","Texas A&M","L (21-24)",2001-10-27
+"424","Iowa State","","Kansas State","L (3-42)",2001-11-03
+"426","Iowa State","@","Kansas","W (49-7)",2001-11-17
+"428","Kansas","","Non-Major","W (24-10)",2001-09-01
+"429","Kansas","","UCLA","L (17-41)",2001-09-08
+"431","Kansas","@","Texas Tech","W (34-31)",2001-10-06
+"432","Kansas","","Oklahoma","L (10-38)",2001-10-13
+"433","Kansas","","Missouri","L (34-38)",2001-10-20
+"434","Kansas","@","Kansas State","L (6-40)",2001-10-27
+"435","Kansas","","Nebraska","L (7-51)",2001-11-03
+"436","Kansas","@","Texas","L (0-59)",2001-11-10
+"438","Kansas","","Wyoming","W (27-14)",2001-11-24
+"439","Kansas State","@","Southern California","W (10-6)",2001-09-08
+"440","Kansas State","","New Mexico State","W (64-0)",2001-09-22
+"441","Kansas State","@","Oklahoma","L (37-38)",2001-09-29
+"443","Kansas State","@","Texas Tech","L (19-38)",2001-10-13
+"444","Kansas State","","Texas A&M","L (24-31)",2001-10-20
+"447","Kansas State","@","Nebraska","L (21-31)",2001-11-10
+"448","Kansas State","","Louisiana Tech","W (40-7)",2001-11-17
+"449","Kansas State","","Missouri","W (24-3)",2001-11-24
+"451","Kent State","","Non-Major","W (38-17)",2001-09-08
+"452","Kent State","@","West Virginia","L (14-34)",2001-09-22
+"455","Kent State","","Northern Illinois","W (44-34)",2001-10-13
+"457","Kent State","@","Ohio","W (24-14)",2001-10-27
+"458","Kent State","","Marshall","L (21-42)",2001-11-03
+"460","Kent State","","Miami (OH)","W (24-20)",2001-11-24
+"461","Kentucky","","Louisville","L (10-36)",2001-09-01
+"464","Kentucky","","Mississippi","L (31-42)",2001-09-29
+"465","Kentucky","@","South Carolina","L (6-42)",2001-10-06
+"466","Kentucky","","Louisiana State","L (25-29)",2001-10-13
+"468","Kentucky","@","Mississippi State","L (14-17)",2001-11-03
+"469","Kentucky","@","Vanderbilt","W (56-30)",2001-11-10
+"470","Kentucky","","Tennessee","L (35-38)",2001-11-17
+"472","Louisiana","","Non-Major","W (20-0)",2001-09-01
+"473","Louisiana","@","Minnesota","L (14-44)",2001-09-08
+"474","Louisiana","","Southern Mississippi","L (10-35)",2001-09-22
+"475","Louisiana","","Middle Tennessee State","L (9-26)",2001-09-29
+"479","Louisiana","","Louisiana-Monroe","W (17-12)",2001-10-27
+"480","Louisiana","@","North Texas","L (17-42)",2001-11-10
+"481","Louisiana","","New Mexico State","L (46-49)",2001-11-17
+"482","Louisiana","@","Central Florida","L (0-31)",2001-11-24
+"483","Louisiana-Monroe","","Non-Major","L (9-20)",2001-09-01
+"485","Louisiana-Monroe","","Middle Tennessee State","L (20-38)",2001-09-22
+"486","Louisiana-Monroe","","New Mexico State","L (0-31)",2001-09-29
+"487","Louisiana-Monroe","","North Texas","W (19-17)",2001-10-06
+"488","Louisiana-Monroe","@","Central Florida","L (6-38)",2001-10-20
+"491","Louisiana-Monroe","","Troy","L (12-44)",2001-11-10
+"494","Louisiana Tech","","Southern Methodist","W (36-6)",2001-09-01
+"495","Louisiana Tech","@","Oklahoma State","L (23-30)",2001-09-08
+"497","Louisiana Tech","","San Jose State","W (41-20)",2001-10-06
+"498","Louisiana Tech","@","Nevada","W (45-42)",2001-10-13
+"500","Louisiana Tech","","Rice","W (41-38)",2001-10-27
+"502","Louisiana Tech","@","Texas-El Paso","W (53-30)",2001-11-10
+"504","Louisiana Tech","@","Tulsa","W (19-7)",2001-11-24
+"505","Louisville","","New Mexico State","W (45-24)",2001-08-23
+"507","Louisville","","Non-Major","W (31-7)",2001-09-08
+"509","Louisville","","Memphis","W (38-21)",2001-09-29
+"511","Louisville","","Southern Mississippi","W (24-14)",2001-10-16
+"513","Louisville","@","Tulane","W (52-7)",2001-11-03
+"516","Louisville","@","Texas Christian","L (22-37)",2001-11-23
+"517","Louisiana State","","Tulane","W (48-17)",2001-09-01
+"518","Louisiana State","","Utah State","W (31-14)",2001-09-08
+"519","Louisiana State","@","Tennessee","L (18-26)",2001-09-29
+"522","Louisiana State","@","Mississippi State","W (42-0)",2001-10-20
+"523","Louisiana State","","Mississippi","L (24-35)",2001-10-27
+"525","Louisiana State","","Middle Tennessee State","W (30-14)",2001-11-10
+"528","Louisiana State","N","Tennessee","W (31-20)",2001-12-08
+"530","Marshall","","Non-Major","W (49-20)",2001-09-08
+"532","Marshall","@","Northern Illinois","W (37-15)",2001-10-06
+"537","Marshall","@","Miami (OH)","W (27-21)",2001-11-10
+"538","Marshall","","Ohio","W (42-18)",2001-11-17
+"539","Marshall","","Non-Major","W (38-24)",2001-11-24
+"540","Marshall","@","Toledo","L (36-41)",2001-11-30
+"541","Maryland","","North Carolina","W (23-7)",2001-09-01
+"543","Maryland","@","Wake Forest","W (27-20)",2001-09-22
+"544","Maryland","","West Virginia","W (32-20)",2001-09-29
+"545","Maryland","","Virginia","W (41-21)",2001-10-06
+"549","Maryland","","Troy","W (47-14)",2001-11-03
+"551","Maryland","@","North Carolina State","W (23-19)",2001-11-17
+"552","Memphis","@","Mississippi State","L (10-30)",2001-09-03
+"553","Memphis","","Non-Major","W (43-10)",2001-09-08
+"554","Memphis","","South Florida","W (17-9)",2001-09-22
+"556","Memphis","","Southern Mississippi","W (22-17)",2001-10-06
+"559","Memphis","","Alabama-Birmingham","L (14-17)",2001-10-27
+"560","Memphis","@","Tennessee","L (28-49)",2001-11-10
+"563","Miami (FL)","@","Penn State","W (33-7)",2001-09-01
+"564","Miami (FL)","","Rutgers","W (61-0)",2001-09-08
+"565","Miami (FL)","@","Pittsburgh","W (43-21)",2001-09-27
+"566","Miami (FL)","","Troy","W (38-7)",2001-10-06
+"568","Miami (FL)","","West Virginia","W (45-3)",2001-10-25
+"569","Miami (FL)","","Temple","W (38-0)",2001-11-03
+"571","Miami (FL)","","Syracuse","W (59-0)",2001-11-17
+"572","Miami (FL)","","Washington","W (65-7)",2001-11-24
+"573","Miami (FL)","@","Virginia Tech","W (26-24)",2001-12-01
+"574","Miami (OH)","@","Michigan","L (13-31)",2001-09-01
+"580","Miami (OH)","@","Ohio","W (36-24)",2001-10-20
+"581","Miami (OH)","","Western Michigan","W (25-11)",2001-10-27
+"587","Michigan","@","Washington","L (18-23)",2001-09-08
+"588","Michigan","","Western Michigan","W (38-21)",2001-09-22
+"590","Michigan","@","Penn State","W (20-0)",2001-10-06
+"591","Michigan","","Purdue","W (24-10)",2001-10-13
+"593","Michigan","@","Michigan State","L (24-26)",2001-11-03
+"594","Michigan","","Minnesota","W (31-10)",2001-11-10
+"595","Michigan","@","Wisconsin","W (20-17)",2001-11-17
+"596","Michigan","","Ohio State","L (20-26)",2001-11-24
+"598","Michigan State","@","Notre Dame","W (17-10)",2001-09-22
+"599","Michigan State","@","Northwestern","L (26-27)",2001-09-29
+"601","Michigan State","@","Minnesota","L (19-28)",2001-10-20
+"602","Michigan State","@","Wisconsin","W (42-28)",2001-10-27
+"605","Michigan State","@","Purdue","L (14-24)",2001-11-17
+"606","Michigan State","","Penn State","L (37-42)",2001-11-24
+"607","Michigan State","","Missouri","W (55-7)",2001-12-01
+"608","Middle Tennessee State","@","Vanderbilt","W (37-28)",2001-08-30
+"609","Middle Tennessee State","","Troy","W (54-17)",2001-09-08
+"613","Middle Tennessee State","@","North Texas","L (21-24)",2001-10-13
+"614","Middle Tennessee State","@","Mississippi","L (17-45)",2001-10-20
+"615","Middle Tennessee State","","New Mexico State","W (39-35)",2001-10-27
+"619","Minnesota","@","Toledo","L (7-38)",2001-08-30
+"621","Minnesota","","Purdue","L (28-35)",2001-09-29
+"623","Minnesota","@","Northwestern","L (17-23)",2001-10-13
+"625","Minnesota","","Non-Major","W (66-10)",2001-10-27
+"626","Minnesota","","Ohio State","L (28-31)",2001-11-03
+"629","Minnesota","","Wisconsin","W (42-31)",2001-11-24
+"631","Mississippi State","","South Carolina","L (14-16)",2001-09-20
+"634","Mississippi State","","Troy","L (9-21)",2001-10-13
+"639","Mississippi State","","Mississippi","W (36-28)",2001-11-22
+"642","Missouri","","Non-Major","W (40-6)",2001-09-08
+"643","Missouri","","Nebraska","L (3-36)",2001-09-29
+"644","Missouri","@","Oklahoma State","W (41-38)",2001-10-06
+"647","Missouri","","Texas","L (16-35)",2001-10-27
+"652","Navy","@","Temple","L (26-45)",2001-08-30
+"656","Navy","","Rice","L (13-21)",2001-10-13
+"657","Navy","@","Rutgers","L (17-23)",2001-10-20
+"658","Navy","@","Toledo","L (20-21)",2001-10-27
+"659","Navy","","Tulane","L (28-42)",2001-11-10
+"660","Navy","@","Notre Dame","L (16-34)",2001-11-17
+"662","Nebraska","","Texas Christian","W (21-7)",2001-08-25
+"663","Nebraska","","Troy","W (42-14)",2001-09-01
+"664","Nebraska","","Notre Dame","W (27-10)",2001-09-08
+"665","Nebraska","","Rice","W (48-3)",2001-09-20
+"669","Nebraska","","Texas Tech","W (41-31)",2001-10-20
+"670","Nebraska","","Oklahoma","W (20-10)",2001-10-27
+"677","Nevada","","Nevada-Las Vegas","L (12-27)",2001-10-06
+"679","Nevada","@","Rice","L (30-33)",2001-10-20
+"681","Nevada","","Southern Methodist","W (35-14)",2001-11-03
+"682","Nevada","@","San Jose State","L (45-64)",2001-11-10
+"684","Nevada","@","Texas-El Paso","W (48-31)",2001-11-24
+"685","New Mexico","","Texas-El Paso","W (26-6)",2001-09-01
+"686","New Mexico","@","Texas Tech","L (30-42)",2001-09-08
+"688","New Mexico","@","Utah","L (16-37)",2001-09-29
+"689","New Mexico","@","Wyoming","W (30-29)",2001-10-06
+"692","New Mexico","@","San Diego State","W (20-15)",2001-11-03
+"693","New Mexico","","Nevada-Las Vegas","W (27-17)",2001-11-10
+"695","New Mexico","","New Mexico State","W (53-0)",2001-11-24
+"697","New Mexico State","@","Texas","L (7-41)",2001-09-01
+"698","New Mexico State","","Oregon State","L (22-27)",2001-09-08
+"701","New Mexico State","@","Tulsa","W (24-7)",2001-10-06
+"704","New Mexico State","","North Texas","L (20-22)",2001-11-03
+"708","North Carolina","@","Oklahoma","L (27-41)",2001-08-25
+"710","North Carolina","@","Texas","L (14-44)",2001-09-08
+"712","North Carolina","@","North Carolina State","W (17-9)",2001-09-29
+"714","North Carolina","","Virginia","W (30-24)",2001-10-13
+"717","North Carolina","","Wake Forest","L (31-32)",2001-11-10
+"719","North Carolina","","Southern Methodist","W (19-10)",2001-12-01
+"721","North Carolina State","@","Southern Methodist","W (26-17)",2001-09-22
+"723","North Carolina State","@","Wake Forest","W (17-14)",2001-10-06
+"726","North Carolina State","","Virginia","W (24-0)",2001-10-27
+"730","North Carolina State","","Ohio","W (27-7)",2001-11-24
+"731","Northern Illinois","","South Florida","W (20-17)",2001-08-30
+"733","Northern Illinois","","Non-Major","W (41-16)",2001-09-22
+"734","Northern Illinois","@","Toledo","L (20-41)",2001-09-29
+"737","Northern Illinois","","Western Michigan","W (20-12)",2001-10-20
+"741","Northern Illinois","@","Wake Forest","L (35-38)",2001-11-24
+"742","North Texas","","Texas Christian","L (5-19)",2001-09-01
+"743","North Texas","@","Oklahoma","L (10-37)",2001-09-08
+"744","North Texas","","Texas Tech","L (14-42)",2001-09-22
+"745","North Texas","@","South Florida","L (10-28)",2001-09-29
+"752","North Texas","@","Troy","L (16-18)",2001-12-01
+"753","Northwestern","@","Nevada-Las Vegas","W (37-28)",2001-09-07
+"756","Northwestern","@","Ohio State","L (20-38)",2001-10-06
+"758","Northwestern","","Penn State","L (35-38)",2001-10-20
+"759","Northwestern","@","Purdue","L (27-32)",2001-10-27
+"766","Notre Dame","@","Texas A&M","L (3-24)",2001-09-29
+"767","Notre Dame","","Pittsburgh","W (24-7)",2001-10-06
+"768","Notre Dame","","West Virginia","W (34-24)",2001-10-13
+"769","Notre Dame","","Southern California","W (27-16)",2001-10-20
+"771","Notre Dame","","Tennessee","L (18-28)",2001-11-03
+"773","Notre Dame","@","Stanford","L (13-17)",2001-11-24
+"774","Notre Dame","@","Purdue","W (24-18)",2001-12-01
+"776","Ohio","@","West Virginia","L (3-20)",2001-09-08
+"778","Ohio","","Toledo","L (41-48)",2001-10-06
+"787","Ohio State","@","UCLA","L (6-13)",2001-09-22
+"790","Ohio State","","Wisconsin","L (17-20)",2001-10-13
+"791","Ohio State","","San Diego State","W (27-12)",2001-10-20
+"792","Ohio State","@","Penn State","L (27-29)",2001-10-27
+"794","Ohio State","","Purdue","W (35-9)",2001-11-10
+"801","Oklahoma","N","Texas","W (14-3)",2001-10-06
+"805","Oklahoma","","Tulsa","W (58-0)",2001-11-03
+"806","Oklahoma","","Texas A&M","W (31-10)",2001-11-10
+"807","Oklahoma","@","Texas Tech","W (30-13)",2001-11-17
+"808","Oklahoma","","Oklahoma State","L (13-16)",2001-11-24
+"809","Oklahoma State","@","Southern Mississippi","L (9-17)",2001-09-01
+"811","Oklahoma State","@","Texas A&M","L (7-21)",2001-09-22
+"812","Oklahoma State","","Non-Major","W (24-0)",2001-09-29
+"814","Oklahoma State","","Texas","L (17-45)",2001-10-13
+"817","Oklahoma State","","Texas Tech","L (30-49)",2001-11-10
+"820","Mississippi","","Non-Major","W (49-14)",2001-09-01
+"830","Mississippi","","Vanderbilt","W (38-27)",2001-12-01
+"831","Oregon","","Wisconsin","W (31-28)",2001-09-01
+"832","Oregon","","Utah","W (24-10)",2001-09-08
+"833","Oregon","","Southern California","W (24-22)",2001-09-22
+"834","Oregon","@","Utah State","W (38-21)",2001-09-29
+"837","Oregon","","Stanford","L (42-49)",2001-10-20
+"838","Oregon","@","Washington State","W (24-17)",2001-10-27
+"840","Oregon","@","UCLA","W (21-20)",2001-11-10
+"841","Oregon","","Oregon State","W (17-14)",2001-12-01
+"844","Oregon State","","UCLA","L (7-38)",2001-09-29
+"845","Oregon State","@","Washington State","L (27-34)",2001-10-06
+"849","Oregon State","@","Southern California","L (13-16)",2001-11-03
+"850","Oregon State","","Washington","W (49-24)",2001-11-10
+"851","Oregon State","","Non-Major","W (45-10)",2001-11-17
+"854","Penn State","","Wisconsin","L (6-18)",2001-09-22
+"859","Penn State","","Southern Mississippi","W (38-20)",2001-11-03
+"863","Penn State","@","Virginia","L (14-20)",2001-12-01
+"864","Pittsburgh","","Non-Major","W (31-0)",2001-09-01
+"865","Pittsburgh","","South Florida","L (26-35)",2001-09-08
+"868","Pittsburgh","","Syracuse","L (10-42)",2001-10-13
+"870","Pittsburgh","@","Temple","W (33-7)",2001-10-27
+"871","Pittsburgh","","Virginia Tech","W (38-7)",2001-11-03
+"872","Pittsburgh","@","Rutgers","W (42-0)",2001-11-10
+"873","Pittsburgh","@","West Virginia","W (23-17)",2001-11-24
+"874","Pittsburgh","","Alabama-Birmingham","W (24-6)",2001-12-01
+"895","Rice","","Tulsa","W (59-32)",2001-11-10
+"896","Rice","","Texas-El Paso","W (27-17)",2001-11-17
+"897","Rice","@","Southern Methodist","L (20-37)",2001-11-24
+"900","Rutgers","","Virginia Tech","L (0-50)",2001-09-22
+"902","Rutgers","","Syracuse","L (17-24)",2001-10-06
+"903","Rutgers","@","Temple","L (5-30)",2001-10-13
+"905","Rutgers","@","West Virginia","L (7-80)",2001-11-03
+"913","San Diego State","","Non-Major","W (40-7)",2001-10-06
+"914","San Diego State","@","Nevada-Las Vegas","L (3-31)",2001-10-13
+"918","San Diego State","@","Utah","L (3-17)",2001-11-10
+"919","San Diego State","","Wyoming","W (38-16)",2001-11-17
+"920","San Jose State","@","Southern California","L (10-21)",2001-09-01
+"924","San Jose State","","Southern Methodist","L (17-24)",2001-10-13
+"925","San Jose State","@","Texas-El Paso","W (40-28)",2001-10-20
+"926","San Jose State","","Tulsa","W (63-27)",2001-10-27
+"931","San Jose State","","Stanford","L (14-41)",2001-12-01
+"933","Southern Methodist","","Texas Christian","L (10-38)",2001-09-08
+"937","Southern Methodist","","Texas-El Paso","W (40-14)",2001-10-27
+"940","Southern Methodist","@","Tulsa","W (24-14)",2001-11-17
+"949","South Carolina","","Vanderbilt","W (46-14)",2001-10-20
+"950","South Carolina","@","Tennessee","L (10-17)",2001-10-27
+"951","South Carolina","","Non-Major","W (38-14)",2001-11-03
+"956","Southern Mississippi","","Alabama-Birmingham","W (3-0)",2001-09-29
+"961","Southern Mississippi","","Tulane","W (59-6)",2001-11-17
+"964","Southern Mississippi","","Texas Christian","L (12-14)",2001-12-07
+"969","South Florida","@","Utah","L (21-52)",2001-10-06
+"971","South Florida","","Non-Major","W (42-12)",2001-10-20
+"972","South Florida","","Non-Major","W (68-37)",2001-10-27
+"974","South Florida","","Non-Major","W (48-17)",2001-11-10
+"975","South Florida","","Utah State","W (34-13)",2001-11-24
+"978","Stanford","@","Southern California","W (21-16)",2001-09-29
+"979","Stanford","","Washington State","L (39-45)",2001-10-13
+"981","Stanford","","UCLA","W (38-28)",2001-10-27
+"982","Stanford","@","Washington","L (28-42)",2001-11-03
+"988","Syracuse","@","Tennessee","L (9-33)",2001-09-01
+"989","Syracuse","","Central Florida","W (21-10)",2001-09-08
+"994","Syracuse","","Temple","W (45-3)",2001-10-20
+"995","Syracuse","@","Virginia Tech","W (22-14)",2001-10-27
+"996","Syracuse","","West Virginia","W (24-13)",2001-11-10
+"1000","Temple","","Toledo","L (7-33)",2001-09-08
+"1007","Temple","","Virginia Tech","L (0-35)",2001-11-10
+"1008","Temple","@","West Virginia","W (17-14)",2001-11-17
+"1019","Tennessee","","Vanderbilt","W (38-0)",2001-11-24
+"1022","Texas A&M","","Non-Major","W (38-24)",2001-09-01
+"1023","Texas A&M","@","Wyoming","W (28-20)",2001-09-06
+"1030","Texas A&M","@","Texas Tech","L (0-12)",2001-11-03
+"1032","Texas A&M","","Texas","L (7-21)",2001-11-23
+"1036","Texas Christian","","Non-Major","L (24-27)",2001-09-22
+"1038","Texas Christian","@","Tulane","L (22-48)",2001-10-13
+"1041","Texas Christian","@","Alabama-Birmingham","L (17-38)",2001-11-10
+"1047","Texas","","Texas Tech","W (42-7)",2001-09-29
+"1066","Texas Tech","","Non-Major","W (58-3)",2001-11-24
+"1074","Toledo","","Western Michigan","W (41-35)",2001-11-06
+"1080","Troy","","Non-Major","W (26-0)",2001-09-22
+"1083","Troy","","Non-Major","W (44-31)",2001-10-20
+"1084","Troy","","Non-Major","W (20-17)",2001-10-27
+"1087","Troy","","Non-Major","W (21-3)",2001-11-17
+"1092","Tulane","","Central Florida","L (29-36)",2001-09-22
+"1093","Tulane","","Non-Major","W (41-7)",2001-09-29
+"1096","Tulane","@","Alabama-Birmingham","L (27-34)",2001-10-20
+"1101","Tulsa","","Non-Major","W (51-0)",2001-08-30
+"1103","Tulsa","@","Texas-El Paso","L (10-26)",2001-09-29
+"1112","Alabama-Birmingham","","Non-Major","W (41-13)",2001-08-30
+"1116","Alabama-Birmingham","@","Central Florida","L (7-24)",2001-10-06
+"1126","Central Florida","@","Virginia Tech","L (14-46)",2001-09-29
+"1128","Central Florida","","Non-Major","W (63-0)",2001-10-13
+"1130","Central Florida","@","Utah State","L (27-30)",2001-10-27
+"1138","UCLA","","Washington","W (35-13)",2001-10-13
+"1141","UCLA","@","Washington State","L (14-20)",2001-11-03
+"1143","UCLA","@","Southern California","L (0-27)",2001-11-17
+"1152","Nevada-Las Vegas","@","Wyoming","W (47-26)",2001-10-27
+"1153","Nevada-Las Vegas","","Utah","L (14-42)",2001-11-03
+"1160","Southern California","@","Washington","L (24-27)",2001-10-06
+"1167","Utah","","Utah State","W (23-19)",2001-09-01
+"1172","Utah","","Wyoming","W (35-0)",2001-10-20
+"1180","Utah State","","Wyoming","L (42-43)",2001-09-22
+"1183","Utah State","","Non-Major","W (28-27)",2001-10-20
+"1186","Utah State","","Non-Major","W (56-43)",2001-11-17
+"1190","Texas-El Paso","","Non-Major","W (52-6)",2001-09-08
+"1202","Vanderbilt","","Non-Major","W (28-22)",2001-09-22
+"1211","Virginia","@","Wisconsin","L (17-26)",2001-08-25
+"1212","Virginia","","Non-Major","W (17-16)",2001-09-01
+"1219","Virginia","","Wake Forest","L (30-34)",2001-11-03
+"1221","Virginia","","Virginia Tech","L (17-31)",2001-11-17
+"1224","Virginia Tech","","Western Michigan","W (31-0)",2001-09-08
+"1227","Virginia Tech","@","West Virginia","W (35-0)",2001-10-06
+"1235","Wake Forest","","Non-Major","W (20-10)",2001-09-08
+"1254","Washington","","Washington State","W (26-14)",2001-11-17
+"1262","Washington State","","Non-Major","W (53-28)",2001-10-18
+"1267","Western Michigan","","Non-Major","W (48-7)",2001-08-30
+"1293","Wisconsin","","Non-Major","W (24-6)",2001-09-29
+"1301","Wyoming","","Non-Major","W (20-14)",2001-09-01
