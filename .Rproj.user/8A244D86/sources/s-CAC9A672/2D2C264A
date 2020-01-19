@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1579472358356.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2D2C264A",
+    "lastKnownWriteTime" : 1579473319,
+    "last_content_update" : 1579473319888,
+    "path" : "~/Documents/Work/New_College/Research/CFB_Rankings_and_Prediction/Submission_Scraping_Full_Logs_For_Each_Team_Across_All_Years.R",
+    "project_path" : "Submission_Scraping_Full_Logs_For_Each_Team_Across_All_Years.R",
+    "properties" : {
+        "cursorPosition" : "79,0",
+        "scrollLine" : "71"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
