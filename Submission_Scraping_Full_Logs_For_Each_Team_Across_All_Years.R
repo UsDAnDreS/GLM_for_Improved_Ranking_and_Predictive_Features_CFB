@@ -46,7 +46,7 @@ find_extra_table <- function(url_link){
 ##########
 ###########
 
-year <- 2001
+year <- 2017
 
 
 #######
@@ -204,9 +204,25 @@ good.names <- c(#"florida-am",
   "central-florida",
   "nevada-las-vegas",
   "southern-california", 
-  "texas-el-paso"#,
-  #"texas-san-antonio"
+  "texas-el-paso",
+  "texas-san-antonio"
 )
+good.capital.names <- c(
+  #"Florida A&M",
+  "Louisiana", 
+  "Louisiana State",
+  "Mississippi", 
+  "Pittsburgh",
+  "Southern Methodist", 
+  "Texas A&M",
+  "Alabama-Birmingham",
+  "Central Florida",
+  "Nevada-Las Vegas",
+  "Southern California", 
+  "Texas-El Paso",
+  "Texas-San Antonio"
+)
+  
 cbind(url.names[bad.ind], good.names)
 
 
@@ -266,10 +282,13 @@ for (j in 1:length(bad.ind)){
   defense_data <- table_two
   
   # Save the scraped defensive logs data.
-  write.csv(offense_data, paste("Game_Logs/",year,'/Offense/',FBS_Team_names[bad.ind[j]],'.csv', sep=''))
+ # write.csv(offense_data, paste("Game_Logs/",year,'/Offense/',FBS_Team_names[bad.ind[j]],'.csv', sep=''))
+  write.csv(offense_data, paste("Game_Logs/",year,'/Offense/',good.capital.names[j],'.csv', sep=''))
   
   # Save the scraped defensive logs data.
-  write.csv(defense_data, paste("Game_Logs/",year,'/Defense/',FBS_Team_names[bad.ind[j]],'.csv', sep=''))
+#  write.csv(defense_data, paste("Game_Logs/",year,'/Defense/',FBS_Team_names[bad.ind[j]],'.csv', sep=''))
+  write.csv(offense_data, paste("Game_Logs/",year,'/Defense/',good.capital.names[j],'.csv', sep=''))
+  
 }
 
 
