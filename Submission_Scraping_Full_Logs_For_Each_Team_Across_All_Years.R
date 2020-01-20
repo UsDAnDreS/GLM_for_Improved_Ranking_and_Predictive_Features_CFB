@@ -144,6 +144,7 @@ for (j in 1:length(low.names)){
   colnames(table_one)[1] <- "Team"
 
   offense_data <- table_one
+  colnames(offense_data)
   
   
   ### Scraping the second table on the page (defensive logs).
@@ -166,6 +167,10 @@ for (j in 1:length(low.names)){
   colnames(table_two)[1] <- "Team"
   
   defense_data <- table_two
+  
+  ## Because of "Tot.1" (in offense) vs "TO" (in defense) for denoting turnovers,
+  ## with "TO" preferred
+  colnames(offense_data) <- colnames(defense_data)
   
   # Save the scraped defensive logs data.
   write.csv(offense_data, file=paste(getwd(),"/Game_Logs/",year,'/Offense/',FBS_Team_names[j],'.csv', sep=''))
@@ -207,6 +212,10 @@ good.names <- c(#"florida-am",
   "texas-el-paso",
   "texas-san-antonio"
 )
+
+## There's "Central Florida" in "Opponent" column, instead of "UCF"...
+#  and a bunch of other examples...
+#  So, instead, just decided to make it all according to the "Opponent" column format
 good.capital.names <- c(
   #"Florida A&M",
   "Louisiana", 
@@ -281,13 +290,17 @@ for (j in 1:length(bad.ind)){
   
   defense_data <- table_two
   
+  ## Because of "Tot.1" (in offense) vs "TO" (in defense) for denoting turnovers,
+  ## with "TO" preferred
+  colnames(offense_data) <- colnames(defense_data)
+  
   # Save the scraped defensive logs data.
  # write.csv(offense_data, paste("Game_Logs/",year,'/Offense/',FBS_Team_names[bad.ind[j]],'.csv', sep=''))
   write.csv(offense_data, paste("Game_Logs/",year,'/Offense/',good.capital.names[j],'.csv', sep=''))
   
   # Save the scraped defensive logs data.
 #  write.csv(defense_data, paste("Game_Logs/",year,'/Defense/',FBS_Team_names[bad.ind[j]],'.csv', sep=''))
-  write.csv(offense_data, paste("Game_Logs/",year,'/Defense/',good.capital.names[j],'.csv', sep=''))
+  write.csv(defense_data, paste("Game_Logs/",year,'/Defense/',good.capital.names[j],'.csv', sep=''))
   
 }
 
