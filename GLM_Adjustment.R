@@ -1,13 +1,14 @@
 # !!! https://happygitwithr.com/rstudio-git-github.html !!!
 
 year <- 2017
-week <- 10
-GLM_type <- "Poisson"
+#week <- 10
+GLM_type <- "Gaussian"
 
 path <- paste("~/Documents/Work/New_College/Research/GLM_for_Improved_Ranking_and_Predictive_Features_CFB/Game_Logs/",year, "/", sep="")
 path_offense <- paste(path,"/Offense/", sep="")
 path_defense <- paste(path, "/Defense/", sep="")
 Data <- read.csv(paste(path_offense,"Texas-San Antonio.csv", sep=""))
+
 head(Data)
 
 latest.date <- function(week, year){
@@ -15,14 +16,47 @@ latest.date <- function(week, year){
   return(max(as.Date(subset(data, Wk == week)$Date, "%b %d, %Y")))
 }
 
+latest.week <- function(year){
+  data <- read.csv(paste("Game_Logs/", year, "/All_DISTINCT_Condensed_Game_Logs_NO_NEUTRAL_with_WEEKS.csv", sep=""))
+  return(max(data$Wk))
+}
+
+
+max.week <- latest.week(year)
+
+
+for (week in 10:max.week){
+  
+print(week)
+  
 max.date <- latest.date(week, year)
 
+# "Pct" - Completion %
+
+# "Yds" - Passing Yards per game
+# "Yds.1" - Rushing yards per game
+# "Yds.2" - Total yards per game
+
+# "Avg" - Yards per carry
+# "Avg.1" - Yards per play
+# "Avg.2" - Yards per passing play
+
+# "TD"  - Passing TD per game  
+# "TD.1" - Rushing TD per game
+# "TD.2"  - Total TD per game
+
+# "Fum"  
+# "Int"  
+# "TO"
+# "Points"
+
+
 stats <- colnames(Data)[c(9:11,13:15,17:18,25:27)]
-stats
+stats <- c(stats, "TD.2", "Points", "Avg.2")
 
 FBS_Team_names <- sapply(list.files(path=path_offense), function(x) substring(x, 1,nchar(x)-4))
 names(FBS_Team_names) <- NULL
-
+  
 
 ## Picking a stat, creating a mini-dataframe
 n.st <- 1
@@ -33,7 +67,7 @@ stat <- stats[n.st]
 for (stat in stats){
 print(stat)
 dec <- 1  
-if (stat %in% c("Fum", "Int", "Tot.1")) dec <- -1   # For turnovers, the rankings are "1. Smallest, ..."
+if (stat %in% c("Fum", "Int", "TO")) dec <- -1   # For turnovers, the rankings are "1. Smallest, ..."
 
 full.df <- NULL
 
@@ -43,13 +77,31 @@ n.teams <- length(FBS_Team_names) + 1
 Data_homefield_full <- subset(read.csv(paste(path, "All_DISTINCT_Condensed_Game_Logs.csv", sep="")), as.Date(Date) <= max.date)
 
 for (team in FBS_Team_names){
-  print(team)
+  #print(team)
   Data_offense <- subset(read.csv(paste(path_offense, team, ".csv", sep="")), as.Date(Date) <= max.date)
   Data_defense <- subset(read.csv(paste(path_defense, team, ".csv", sep="")), as.Date(Date) <= max.date)
+  
+  if (stat == "TD.2") {Data_offense$TD.2 <- Data_offense$TD + Data_offense$TD.1; Data_defense$TD.2 <- Data_defense$TD + Data_defense$TD.1}
+  if (stat == "Avg.2") {Data_offense$Avg.2 <- Data_offense$Yds/Data_offense$Att; Data_defense$Avg.2 <- Data_defense$Yds/Data_defense$Att}
+  
+  if (stat == "Points"){
+    Data_offense$Points <-   sapply(Data_offense$X.2, function(x){
+                                                          y <- str_extract(x, "\\(.*?\\-");
+                                                          return(as.numeric(substring(y,2,(nchar(y)-1))))})
+    Data_defense$Points <-   sapply(Data_defense$X.2, function(x){
+                                                          y <- str_extract(x, "\\-.*?\\)");
+                                                          return(as.numeric(substring(y,2,(nchar(y)-1))))})
+  }
+  
+  # https://stackoverflow.com/questions/1454913/regular-expression-to-find-a-string-included-between-two-characters-while-exclud
+  
+
   
   full.df <- rbind(full.df,data.frame(Team=factor(team), 
                                       Data_offense[,c("Opponent", stat,"X.1","Date")]))
                                       #Homefield = Data_homefield$X))
+  
+  Data_defense$Opponent <- sapply(Data_defense$Opponent, function(x) str_remove(x, "\\*"))
   interm.df <- subset(Data_defense, !Opponent %in% FBS_Team_names)
   
   if (nrow(interm.df) != 0){
@@ -284,7 +336,6 @@ dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/", sep=""))
 dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/Classic/", sep=""))
 dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/GLM_Adj/", sep=""))
 dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/GLM_Adj_w_HomeField/", sep=""))
-dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/Classic/",GLM_type,"/", sep=""))
 dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/GLM_Adj/",GLM_type,"/", sep=""))
 dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/GLM_Adj_w_HomeField/",GLM_type,"/", sep=""))
 
@@ -292,7 +343,6 @@ dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/", sep=""))
 dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/Classic/", sep=""))
 dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/GLM_Adj/", sep=""))
 dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/GLM_Adj_w_HomeField/", sep=""))
-dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/Classic/",GLM_type,"/", sep=""))
 dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/GLM_Adj/",GLM_type,"/", sep=""))
 dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/GLM_Adj_w_HomeField/",GLM_type,"/", sep=""))
 
@@ -300,18 +350,19 @@ dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/GLM_Adj_w_Ho
 write.csv(defensive.worth.adjusted.df, 
           paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/GLM_Adj/",GLM_type,"/",stat,".csv", sep=""))
 write.csv(defensive.worth.classic.df, 
-          paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/Classic/",GLM_type,"/",stat,".csv", sep=""))
+          paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/Classic/",stat,".csv", sep=""))
 write.csv(defensive.worth.adjusted.hfield.df, 
           paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/GLM_Adj_w_HomeField/",GLM_type,"/",stat,".csv", sep=""))
 
 write.csv(offensive.worth.adjusted.df, 
           paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/GLM_Adj/",GLM_type,"/",stat,".csv", sep=""))
 write.csv(offensive.worth.classic.df, 
-          paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/Classic/",GLM_type,"/",stat,".csv", sep=""))
+          paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/Classic/",stat,".csv", sep=""))
 write.csv(offensive.worth.adjusted.hfield.df, 
           paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/GLM_Adj_w_HomeField/",GLM_type,"/",stat,".csv", sep=""))
 
 
+}
 }
 
 
