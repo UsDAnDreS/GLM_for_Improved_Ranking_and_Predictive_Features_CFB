@@ -2,7 +2,7 @@
 
 year <- 2017
 #week <- 10
-GLM_type <- "Gaussian"
+GLM_type <- "Poisson"
 
 path <- paste("~/Documents/Work/New_College/Research/GLM_for_Improved_Ranking_and_Predictive_Features_CFB/Game_Logs/",year, "/", sep="")
 path_offense <- paste(path,"/Offense/", sep="")
@@ -53,6 +53,7 @@ max.date <- latest.date(week, year)
 
 stats <- colnames(Data)[c(9:11,13:15,17:18,25:27)]
 stats <- c(stats, "TD.2", "Points", "Avg.2")
+if (GLM == "Poisson") stats <- c("TD", "TD.1", "Fum", "Int", "TO", "TD.2", "Points")
 
 FBS_Team_names <- sapply(list.files(path=path_offense), function(x) substring(x, 1,nchar(x)-4))
 names(FBS_Team_names) <- NULL
