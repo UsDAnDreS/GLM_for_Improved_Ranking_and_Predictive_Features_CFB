@@ -2,7 +2,7 @@
 
 year <- 2017
 #week <- 10
-GLM_type <- "Poisson"
+GLM_type <- "Gaussian"
 
 path <- paste("~/Documents/Work/New_College/Research/GLM_for_Improved_Ranking_and_Predictive_Features_CFB/Game_Logs/",year, "/", sep="")
 path_offense <- paste(path,"/Offense/", sep="")
@@ -25,7 +25,7 @@ latest.week <- function(year){
 max.week <- latest.week(year)
 
 
-for (week in 10:max.week){
+for (week in 20){
   
 print(week)
   
@@ -53,7 +53,7 @@ max.date <- latest.date(week, year)
 
 stats <- colnames(Data)[c(9:11,13:15,17:18,25:27)]
 stats <- c(stats, "TD.2", "Points", "Avg.2")
-if (GLM == "Poisson") stats <- c("TD", "TD.1", "Fum", "Int", "TO", "TD.2", "Points")
+if (GLM_type == "Poisson") stats <- c("TD", "TD.1", "Fum", "Int", "TO", "TD.2", "Points")
 
 FBS_Team_names <- sapply(list.files(path=path_offense), function(x) substring(x, 1,nchar(x)-4))
 names(FBS_Team_names) <- NULL
@@ -162,7 +162,8 @@ nrow(subset(merged.df, Homefield == "N"))
 merged.df$X.1.x <- NULL
 
 full.df <- merged.df   # Re-assigning the NEW FULL DATA FRAME...
-full.df$Homefield <- relevel(full.df$Homefield, ref = "N")  # Making "N" the reference group
+# full.df$Homefield <- relevel(full.df$Homefield, ref = "")  # Making "N" the reference group
+full.df$Homefield <- factor(full.df$Homefield, levels=c("","N","@"))  # Making it ordered Home -> Neutral -> Away
 
 cbind(sort(unique(as.character(full.df$Opponent))),
       sort(unique(as.character(full.df$Team))))
@@ -237,15 +238,26 @@ if (GLM_type == "Gaussian"){
   contrasts(full.df$Opponent)
   contrasts(full.df$Homefield)
   
-  lm.obj.hfield <- lm(full.df[,stat] ~ Team + Opponent + Homefield,
+  # Relevel:
+  # relevel(full.df$Homefield, "")
+  
+  full.df$Homefield012 <- as.numeric(full.df$Homefield)-1
+  lm.obj.hfield <- lm(full.df[,stat] ~ Team + Opponent + Homefield012,
                          data=full.df)
   lm.obj.hfield
   
-  ## Adjusted averages, with HOMEFIELD
+  print("INTERCEPT for GLM ADJ")
+  print(coef(lm.obj)[1])
+  print("INTERCEPT for HOME-AWAY ADJ  -  GAMMA (for AVG OPPONENT ON NEUTRAL)")
+  print(coef(lm.obj.hfield)[1] - tail(coef(lm.obj.hfield),1))
+  print("HOME-AWAY COEFFICIENTS:")
+  print(tail(coef(lm.obj.hfield),1))
+  
+  ## Adjusted averages, with HOMEFIELD 
   offensive.worth.adjusted.hfield <- c(coef(lm.obj.hfield)[1] + coef(lm.obj.hfield)[2:n.teams],
-                                coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[2:n.teams]))
+                                       coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[2:n.teams])) + tail(coef(lm.obj.hfield),1)
   defensive.worth.adjusted.hfield <- c(coef(lm.obj.hfield)[1] + coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)],
-                                coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)]))
+                                       coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)])) + tail(coef(lm.obj.hfield),1)
   
   offensive.worth.adjusted.hfield.df <- data.frame(Team=levels(full.df$Team), 
                                                     Value=offensive.worth.adjusted.hfield,
@@ -255,7 +267,8 @@ if (GLM_type == "Gaussian"){
                                                     Rank=rank(defensive.worth.adjusted.hfield*dec))
   rownames(offensive.worth.adjusted.hfield.df) <- rownames(defensive.worth.adjusted.hfield.df) <- NULL
   
-
+  # BUT "HOMEFIELD" is for GAMES AT HOME... hence, JUST ADD a GAMMA to get a NEUTRAL FIELD..
+  print(summary(offensive.worth.adjusted.hfield - offensive.worth.adjusted)) + tail(coef(lm.obj.hfield),1)
 }
 
 
@@ -292,10 +305,8 @@ if (GLM_type == "Poisson"){
   ## WITH HOME-FIELD effect
   ###########
   
-  ## Setting "Homefield" to be:
-  #    0-0 if "N", 
-  #    1-0 if "Home" (or " "),
-  #    0-1 if "Away" (or "@")
+  # Relevel:
+  # relevel(full.df$Homefield, "")
   
   contrasts(full.df$Homefield) <- "contr.treatment"
   
@@ -311,10 +322,18 @@ if (GLM_type == "Poisson"){
   
   
   ## Adjusted averages, with HOMEFIELD
-  offensive.worth.adjusted.hfield <- c(exp(coef(lm.obj.hfield)[1] + coef(lm.obj.hfield)[2:n.teams]),
-                                       exp(coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[2:n.teams])))
-  defensive.worth.adjusted.hfield <- c(exp(coef(lm.obj.hfield)[1] + coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)]),
-                                       exp(coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)])))
+  offensive.worth.adjusted.hfield <- c(exp(coef(lm.obj.hfield)[1] + coef(lm.obj.hfield)[2:n.teams] + tail(coef(lm.obj.hfield),1)),
+                                       exp(coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[2:n.teams]) + tail(coef(lm.obj.hfield),1)))
+  defensive.worth.adjusted.hfield <- c(exp(coef(lm.obj.hfield)[1] + coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)] + tail(coef(lm.obj.hfield),1)),
+                                       exp(coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)]) + tail(coef(lm.obj.hfield),1)))
+  
+
+  print("INTERCEPT for GLM ADJ")
+  print(exp(coef(lm.obj)[1]))
+  print("INTERCEPT for HOME-AWAY ADJ  -  GAMMA (for AVG OPPONENT ON NEUTRAL)")
+  print(exp(coef(lm.obj.hfield)[1] - tail(coef(lm.obj.hfield),1)))
+  print("HOME-AWAY COEFFICIENTS:")
+  print(tail(coef(lm.obj.hfield),1))
   
   offensive.worth.adjusted.hfield.df <- data.frame(Team=levels(full.df$Team), 
                                                    Value=offensive.worth.adjusted.hfield,
@@ -324,6 +343,8 @@ if (GLM_type == "Poisson"){
                                                    Rank=rank(defensive.worth.adjusted.hfield*dec))
   rownames(offensive.worth.adjusted.hfield.df) <- rownames(defensive.worth.adjusted.hfield.df) <- NULL
   
+  # BUT "HOMEFIELD" is for GAMES AT HOME... hence, JUST ADD a GAMMA to get a NEUTRAL FIELD..
+  print(summary(offensive.worth.adjusted.hfield - offensive.worth.adjusted)) + tail(coef(lm.obj.hfield),1)
   
 }
 
