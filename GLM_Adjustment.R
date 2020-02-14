@@ -4,6 +4,10 @@ year <- 2017
 #week <- 10
 GLM_type <- "Gaussian"
 
+corr.team.vs.opponent.stats <- T  # Whether to print out correlation between Team's & Opponent's stats in the same category
+# Because, in many cases, the lower the point count for the opponent, the lower the point count for the team itself..
+
+
 path <- paste("~/Documents/Work/New_College/Research/GLM_for_Improved_Ranking_and_Predictive_Features_CFB/Game_Logs/",year, "/", sep="")
 path_offense <- paste(path,"/Offense/", sep="")
 path_defense <- paste(path, "/Defense/", sep="")
@@ -25,7 +29,7 @@ latest.week <- function(year){
 max.week <- latest.week(year)
 
 
-for (week in 20){
+for (week in max.week){
   
 print(week)
   
@@ -83,7 +87,8 @@ for (team in FBS_Team_names){
   Data_defense <- subset(read.csv(paste(path_defense, team, ".csv", sep="")), as.Date(Date) <= max.date)
   
   if (stat == "TD.2") {Data_offense$TD.2 <- Data_offense$TD + Data_offense$TD.1; Data_defense$TD.2 <- Data_defense$TD + Data_defense$TD.1}
-  if (stat == "Avg.2") {Data_offense$Avg.2 <- Data_offense$Yds/Data_offense$Att; Data_defense$Avg.2 <- Data_defense$Yds/Data_defense$Att}
+  if (stat == "Avg.2") {Data_offense$Avg.2 <- ifelse(Data_offense$Att !=0, Data_offense$Yds/Data_offense$Att,0); 
+                        Data_defense$Avg.2 <- ifelse(Data_offense$Att !=0, Data_defense$Yds/Data_defense$Att,0)}
   
   if (stat == "Points"){
     Data_offense$Points <-   sapply(Data_offense$X.2, function(x){
@@ -114,10 +119,50 @@ for (team in FBS_Team_names){
 }
 
 
+## Trying to study dependence of one team's output in stat category on
+#                          the other team's output in that same category
+#  (e.g. more points scored by opponent => more points scored by the team??)
 
 
-length(sort(unique(full.df$Opponent)))
-dim(full.df)
+
+## Poisson boys
+# par(mfrow=c(1,2))
+# hist(full.df$TD,main = "Touchdowns Per Game",
+#      xlab="Touchdowns Per Game",
+#      freq=F,
+#      breaks=c(0:20)/2-0.5,
+#      col=2)
+# 
+# hist(full.df$TO,main = "Turnovers Per Game",
+#      xlab="Turnovers Per Game",
+#      freq=F,
+#      breaks=c(0:20)/2-0.5,
+#      col=2)
+# par(mfrow=c(1,1))
+
+
+# par(mfrow=c(1,2))
+# hist(full.df$Yds.2,main = "Yards Per Game",
+#      xlab="Yards Per Game",
+#      col=2,
+#      freq=F)
+# lines(density(full.df$Yds.2),
+#       lwd=4,
+#       col=4)
+
+
+# hist(full.df$Points,main = "Points Per Game",
+#      xlab="Points Per Game",
+#      col=2,
+#      freq=F)
+# lines(density(full.df$Points),
+#       lwd=4,
+#       col=4)
+# par(mfrow=c(1,1))
+
+
+#length(sort(unique(full.df$Opponent)))
+#dim(full.df)
 
 
 # Getting rid of "*" due to bowl games, and creating a "Non-Major" team
@@ -127,6 +172,26 @@ full.df$Opponent <- ifelse(full.df$Opponent %in% FBS_Team_names, full.df$Opponen
 ## Making sure factor level ORDERS correspond between Team & Opponent
 full.df$Team <- factor(full.df$Team, levels = sort(levels(full.df$Team)))
 full.df$Opponent <- factor(full.df$Opponent)
+
+## Clean up the NAs
+full.df[,3] <- ifelse(!is.na(full.df[,3]), full.df[,3], 0)
+
+library(tidyverse)
+full.df.flipped <- full.df
+full.df.flipped$Team <- full.df$Opponent
+full.df.flipped$Opponent <- full.df$Team
+full.df.joined <- inner_join(full.df %>% select(Team, Opponent, 3, Date),
+                             full.df.flipped %>% select(Team, Opponent, 3, Date),
+                             by=c("Team","Opponent", "Date"))
+dim(full.df.joined)
+dim(full.df)
+
+
+## Getting the x=MAX stat in a game, y=MIN.. getting rid of duplicates
+dim(t(apply(full.df.joined %>% select(3,5), 1, sort)))
+sorted.stats <- unique(t(apply(full.df.joined %>% select(3,5), 1, sort)))
+print(sorted.stats %>% cor())
+sorted.stats %>% plot(main= colnames(full.df)[3])
 
 
 ####
@@ -138,7 +203,7 @@ merged.df <- merge(full.df, Data_homefield_full, by=c("Team","Opponent"),
                    all.x=T,
                    sort=F)
 
-head(merged.df$Homefield)
+#head(merged.df$Homefield)
 merged.df$Homefield <- factor(ifelse(is.na(merged.df$X), 
                                            as.character(merged.df$X.1.x), 
                                            as.character(merged.df$X)))
@@ -157,7 +222,7 @@ for (j in 1:nrow(merged.df.neutral)){
 }
 
 dim(merged.df)
-nrow(subset(merged.df, Homefield == "N"))
+# nrow(subset(merged.df, Homefield == "N"))
 
 merged.df$X.1.x <- NULL
 
@@ -241,17 +306,19 @@ if (GLM_type == "Gaussian"){
   # Relevel:
   # relevel(full.df$Homefield, "")
   
+  ## Making Homefield a NUMERIC VARIABLE to be modeled with SINGLE PARAMETER:
+  ##  0 - Home, 1- Neutral, 2 - Away
   full.df$Homefield012 <- as.numeric(full.df$Homefield)-1
   lm.obj.hfield <- lm(full.df[,stat] ~ Team + Opponent + Homefield012,
                          data=full.df)
   lm.obj.hfield
   
-  print("INTERCEPT for GLM ADJ")
-  print(coef(lm.obj)[1])
-  print("INTERCEPT for HOME-AWAY ADJ  -  GAMMA (for AVG OPPONENT ON NEUTRAL)")
-  print(coef(lm.obj.hfield)[1] - tail(coef(lm.obj.hfield),1))
-  print("HOME-AWAY COEFFICIENTS:")
-  print(tail(coef(lm.obj.hfield),1))
+ # print("INTERCEPT for GLM ADJ")
+ # print(coef(lm.obj)[1])
+ # print("INTERCEPT for HOME-AWAY ADJ  -  GAMMA (for AVG OPPONENT ON NEUTRAL)")
+ # print(coef(lm.obj.hfield)[1] - tail(coef(lm.obj.hfield),1))
+ # print("HOME-AWAY COEFFICIENTS:")
+ # print(tail(coef(lm.obj.hfield),1))
   
   ## Adjusted averages, with HOMEFIELD 
   offensive.worth.adjusted.hfield <- c(coef(lm.obj.hfield)[1] + coef(lm.obj.hfield)[2:n.teams],
@@ -268,7 +335,7 @@ if (GLM_type == "Gaussian"){
   rownames(offensive.worth.adjusted.hfield.df) <- rownames(defensive.worth.adjusted.hfield.df) <- NULL
   
   # BUT "HOMEFIELD" is for GAMES AT HOME... hence, JUST ADD a GAMMA to get a NEUTRAL FIELD..
-  print(summary(offensive.worth.adjusted.hfield - offensive.worth.adjusted)) + tail(coef(lm.obj.hfield),1)
+  # print(summary(offensive.worth.adjusted.hfield - offensive.worth.adjusted)) + tail(coef(lm.obj.hfield),1)
 }
 
 
@@ -314,7 +381,8 @@ if (GLM_type == "Poisson"){
   contrasts(full.df$Opponent)
   contrasts(full.df$Homefield)
   
-  lm.obj.hfield <- glm(ifelse(full.df[,stat]>=0,full.df[,stat],0)  ~ Team + Opponent + Homefield,
+  full.df$Homefield012 <- as.numeric(full.df$Homefield)-1
+  lm.obj.hfield <- glm(ifelse(full.df[,stat]>=0,full.df[,stat],0)  ~ Team + Opponent + Homefield012,
                        family="poisson",
                        data=full.df)
   lm.obj.hfield
@@ -344,7 +412,7 @@ if (GLM_type == "Poisson"){
   rownames(offensive.worth.adjusted.hfield.df) <- rownames(defensive.worth.adjusted.hfield.df) <- NULL
   
   # BUT "HOMEFIELD" is for GAMES AT HOME... hence, JUST ADD a GAMMA to get a NEUTRAL FIELD..
-  print(summary(offensive.worth.adjusted.hfield - offensive.worth.adjusted)) + tail(coef(lm.obj.hfield),1)
+  # print(summary(offensive.worth.adjusted.hfield - offensive.worth.adjusted)) + tail(coef(lm.obj.hfield),1)
   
 }
 
