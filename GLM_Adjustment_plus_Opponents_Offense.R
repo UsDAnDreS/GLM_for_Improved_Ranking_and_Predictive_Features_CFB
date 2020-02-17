@@ -1,4 +1,5 @@
 # !!! https://happygitwithr.com/rstudio-git-github.html !!!
+library(nlme)
 
 year <- 2017
 #week <- 10
@@ -144,7 +145,7 @@ for (week in max.week){
     ## Getting the x=MAX stat in a game, y=MIN.. getting rid of duplicates
     dim(t(apply(full.df.joined %>% select(3,5), 1, sort)))
     sorted.stats <- unique(t(apply(full.df.joined %>% select(3,5), 1, sort)))
-    print(sorted.stats %>% cor())
+    print(sorted.stats %>% cor() %>% .[1,2])
     sorted.stats %>% plot(main= colnames(full.df)[3])
     
     
@@ -153,7 +154,7 @@ for (week in max.week){
     ## A REALLY CLUNKY CHUNK OF CODE...
     ####
     
-    merged.df <- merge(full.df, Data_homefield_full, by=c("Team","Opponent"),
+    merged.df <- merge(full.df, Data_homefield_full, by=c("Team","Opponent", "Date"),
                        all.x=T,
                        sort=F)
     
@@ -162,7 +163,7 @@ for (week in max.week){
                                          as.character(merged.df$X.1.x), 
                                          as.character(merged.df$X)))
     
-    merged.df[,c(6:9)] <- NULL
+    merged.df <- merged.df[,c("Team","Opponent", "Date", stat, "Homefield")]
     
     ## For all the "Neutral" games, make sure it also shows "Neutral" the other way around
     # (because, otherwise, the "All_DISTINCT" file only contains ONE REPLICATE of one game)
@@ -172,7 +173,7 @@ for (week in max.week){
       merged.df[
         merged.df$Team == merged.df.neutral$Opponent[j] & 
           merged.df$Opponent == merged.df.neutral$Team[j] &
-          merged.df$Date.x == merged.df.neutral$Date.x[j], ]$Homefield <- "N"
+          merged.df$Date == merged.df.neutral$Date[j], ]$Homefield <- "N"
     }
     
     dim(merged.df)
@@ -218,41 +219,65 @@ for (week in max.week){
     ## Gaussian GLM
     ###########
     
+    # Needed to implement "gls()" function across all stats
+    colnames(full.df)[4] <- "Stat"
+    
     if (GLM_type == "Gaussian"){
       
       #####
       ## NO HOME-FIELD effect
       #####
       
-      lm.obj <- lm(full.df[,stat] ~ Team + Opponent,
+      lm.obj <- lm(Stat ~ Team + Opponent,
                    data=full.df)
       lm.obj
       levels(full.df$Team)
+      full.df$group.assignments <- 0
       
       ## Creating "group assignments" for PAIRS OF OBSERVATIONS that correspond to THE SAME GAME
       group.no <- 1
       group.assignments <- numeric(nrow(full.df))
       for (i in 1:nrow(full.df)){
-        print(i)
-        interm.res <- apply(full.df[1:(i-1),c("Team","Opponent")], 1, function(x) all(x == full.df[i,c("Opponent","Team")]))
-        if (any(interm.res)) group.assignments[i] <- group.assignments[which(interm.res)]
-        if (!(any(interm.res))) group.assignments[i] <- group.no; group.no <- group.no+1
+        # print(i)
+        #interm.res <- apply(full.df[1:(i-1),c("Team","Opponent")], 1, function(x) all(x == full.df[i,c("Opponent","Team")]))
+        interm.res <- subset(full.df[1:(i-1),], Team == full.df[i,c("Opponent")] & 
+                                                Opponent == full.df[i,c("Team")] &
+                                                Date == full.df[i,"Date"])
+      
+        if (nrow(interm.res) != 0) full.df$group.assignments[i] <- interm.res$group.assignments
+        if (nrow(interm.res) == 0) {full.df$group.assignments[i] <- group.no; group.no <- group.no + 1}
       }
       
-    full.df$group.assignments <- group.assignments
-    cor.mat <- Initialize(corSymm(form = ~ -1 | group.assignments),
-                          data = full.df)
-    corMatrix(cor.mat)
-    
-     gls(Avg.2 ~ Team + Opponent,
-         data=full.df,
-         correlation = corSymm(form = ~ 1 | group.assignments))
+   
+      ## Implementing the correlation structure between BOTH TEAMS' OUTPUTS IN A GAME...
+      cor.mat <- Initialize(corCompSymm(form = ~ 1 | factor(group.assignments)),
+                            data = full.df)
+      corMatrix(cor.mat)
       
-      ## Adjusted averages
-      offensive.worth.adjusted <- c(coef(lm.obj)[1] + coef(lm.obj)[2:n.teams],
-                                    coef(lm.obj)[1] - sum(coef(lm.obj)[2:n.teams]))
-      defensive.worth.adjusted <- c(coef(lm.obj)[1] + coef(lm.obj)[(n.teams+1):(2*n.teams-1)],
-                                    coef(lm.obj)[1] - sum(coef(lm.obj)[(n.teams+1):(2*n.teams-1)]))
+      ## Compound symmetry, making it
+      ## (1 rho)
+      ## (rho 1)
+      ## for observations corresponding to the same game.
+      ## rho is shared across all games.
+      # http://staff.pubhealth.ku.dk/~jufo/courses/rm2017/rPackageLME.pdf
+      
+      gls.obj <- gls(Stat ~ Team + Opponent,
+                     data=full.df,
+                     correlation = corCompSymm(form = ~ 1 | group.assignments))
+      print("Correlation of Offenses")
+      print(intervals(gls.obj)$corStruct[1:3])
+      
+      summary(gls.obj)
+      
+      print("Group assignments (should be 2 all around):")
+      print(table(table(full.df$group.assignments)))
+      full.df[table(full.df$group.assignments) == 1,]
+      
+     ## Adjusted averages
+      offensive.worth.adjusted <- c(coef(gls.obj)[1] + coef(gls.obj)[2:n.teams],
+                                    coef(gls.obj)[1] - sum(coef(gls.obj)[2:n.teams]))
+      defensive.worth.adjusted <- c(coef(gls.obj)[1] + coef(gls.obj)[(n.teams+1):(2*n.teams-1)],
+                                    coef(gls.obj)[1] - sum(coef(gls.obj)[(n.teams+1):(2*n.teams-1)]))
       
       offensive.worth.adjusted.df <- data.frame(Team=levels(full.df$Team), 
                                                 Value=offensive.worth.adjusted,
@@ -281,9 +306,23 @@ for (week in max.week){
       ## Making Homefield a NUMERIC VARIABLE to be modeled with SINGLE PARAMETER:
       ##  0 - Home, 1- Neutral, 2 - Away
       full.df$Homefield012 <- as.numeric(full.df$Homefield)-1
-      lm.obj.hfield <- lm(full.df[,stat] ~ Team + Opponent + Homefield012,
+      lm.obj.hfield <- lm(Stat ~ Team + Opponent + Homefield012,
                           data=full.df)
       lm.obj.hfield
+      
+      
+      ## Implementing the correlation structure between BOTH TEAMS' OUTPUTS IN A GAME...
+      cor.mat <- Initialize(corCompSymm(form = ~ 1 | factor(group.assignments)),
+                            data = full.df)
+      corMatrix(cor.mat)
+      gls.obj.hfield <- gls(Stat ~ Team + Opponent + Homefield012,
+                            data=full.df,
+                            correlation = corCompSymm(form = ~ 1 | group.assignments))
+      print("Correlation of Offenses (plus Home-Away):")
+      print(intervals(gls.obj.hfield)$corStruct[1:3])
+      
+      summary(gls.obj.hfield)
+      
       
       # print("INTERCEPT for GLM ADJ")
       # print(coef(lm.obj)[1])
@@ -293,10 +332,10 @@ for (week in max.week){
       # print(tail(coef(lm.obj.hfield),1))
       
       ## Adjusted averages, with HOMEFIELD 
-      offensive.worth.adjusted.hfield <- c(coef(lm.obj.hfield)[1] + coef(lm.obj.hfield)[2:n.teams],
-                                           coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[2:n.teams])) + tail(coef(lm.obj.hfield),1)
-      defensive.worth.adjusted.hfield <- c(coef(lm.obj.hfield)[1] + coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)],
-                                           coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)])) + tail(coef(lm.obj.hfield),1)
+      offensive.worth.adjusted.hfield <- c(coef(gls.obj.hfield)[1] + coef(gls.obj.hfield)[2:n.teams],
+                                           coef(gls.obj.hfield)[1] - sum(coef(gls.obj.hfield)[2:n.teams])) + tail(coef(gls.obj.hfield),1)
+      defensive.worth.adjusted.hfield <- c(coef(gls.obj.hfield)[1] + coef(gls.obj.hfield)[(n.teams+1):(2*n.teams-1)],
+                                           coef(gls.obj.hfield)[1] - sum(coef(gls.obj.hfield)[(n.teams+1):(2*n.teams-1)])) + tail(coef(gls.obj.hfield),1)
       
       offensive.worth.adjusted.hfield.df <- data.frame(Team=levels(full.df$Team), 
                                                        Value=offensive.worth.adjusted.hfield,
@@ -317,7 +356,7 @@ for (week in max.week){
       ## NO HOME-FIELD effect
       ###########
       
-      lm.obj <- glm(ifelse(full.df[,stat]>=0,full.df[,stat],0) ~ Team + Opponent,
+      lm.obj <- glm(ifelse(full.df[,"Stat"]>=0,full.df[,"Stat"],0) ~ Team + Opponent,
                     family="poisson",
                     data=full.df)
       lm.obj
@@ -354,7 +393,7 @@ for (week in max.week){
       contrasts(full.df$Homefield)
       
       full.df$Homefield012 <- as.numeric(full.df$Homefield)-1
-      lm.obj.hfield <- glm(ifelse(full.df[,stat]>=0,full.df[,stat],0)  ~ Team + Opponent + Homefield012,
+      lm.obj.hfield <- glm(ifelse(full.df[,"Stat"]>=0,full.df[,"Stat"],0)  ~ Team + Opponent + Homefield012,
                            family="poisson",
                            data=full.df)
       lm.obj.hfield
@@ -368,12 +407,12 @@ for (week in max.week){
                                            exp(coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)]) + tail(coef(lm.obj.hfield),1)))
       
       
-      print("INTERCEPT for GLM ADJ")
-      print(exp(coef(lm.obj)[1]))
-      print("INTERCEPT for HOME-AWAY ADJ  -  GAMMA (for AVG OPPONENT ON NEUTRAL)")
-      print(exp(coef(lm.obj.hfield)[1] - tail(coef(lm.obj.hfield),1)))
-      print("HOME-AWAY COEFFICIENTS:")
-      print(tail(coef(lm.obj.hfield),1))
+      # print("INTERCEPT for GLM ADJ")
+      # print(exp(coef(lm.obj)[1]))
+      # print("INTERCEPT for HOME-AWAY ADJ  -  GAMMA (for AVG OPPONENT ON NEUTRAL)")
+      # print(exp(coef(lm.obj.hfield)[1] - tail(coef(lm.obj.hfield),1)))
+      # print("HOME-AWAY COEFFICIENTS:")
+      # print(tail(coef(lm.obj.hfield),1))
       
       offensive.worth.adjusted.hfield.df <- data.frame(Team=levels(full.df$Team), 
                                                        Value=offensive.worth.adjusted.hfield,
@@ -392,38 +431,33 @@ for (week in max.week){
     
     #dir.create("/Rankings")
     dir.create(paste(getwd(),"/Rankings/", year,"/", sep=""))
-    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/", sep=""))
-    
+    # dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/", sep=""))
+    # 
     dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/", sep=""))
     dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/Classic/", sep=""))
-    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/GLM_Adj/", sep=""))
-    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/GLM_Adj_w_HomeField/", sep=""))
-    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/GLM_Adj/",GLM_type,"/", sep=""))
-    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/GLM_Adj_w_HomeField/",GLM_type,"/", sep=""))
-    
+    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/CORR_GLM_Adj/", sep=""))
+    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/CORR_GLM_Adj_w_HomeField/", sep=""))
+    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/CORR_GLM_Adj/",GLM_type,"/", sep=""))
+    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/CORR_GLM_Adj_w_HomeField/",GLM_type,"/", sep=""))
+
     dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/", sep=""))
     dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/Classic/", sep=""))
-    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/GLM_Adj/", sep=""))
-    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/GLM_Adj_w_HomeField/", sep=""))
-    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/GLM_Adj/",GLM_type,"/", sep=""))
-    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/GLM_Adj_w_HomeField/",GLM_type,"/", sep=""))
-    
-    
-    write.csv(defensive.worth.adjusted.df, 
-              paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/GLM_Adj/",GLM_type,"/",stat,".csv", sep=""))
-    write.csv(defensive.worth.classic.df, 
-              paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/Classic/",stat,".csv", sep=""))
-    write.csv(defensive.worth.adjusted.hfield.df, 
-              paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/GLM_Adj_w_HomeField/",GLM_type,"/",stat,".csv", sep=""))
-    
-    write.csv(offensive.worth.adjusted.df, 
-              paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/GLM_Adj/",GLM_type,"/",stat,".csv", sep=""))
-    write.csv(offensive.worth.classic.df, 
-              paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/Classic/",stat,".csv", sep=""))
-    write.csv(offensive.worth.adjusted.hfield.df, 
-              paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/GLM_Adj_w_HomeField/",GLM_type,"/",stat,".csv", sep=""))
-    
-    
+    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/CORR_GLM_Adj/", sep=""))
+    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/CORR_GLM_Adj_w_HomeField/", sep=""))
+    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/CORR_GLM_Adj/",GLM_type,"/", sep=""))
+    dir.create(paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/CORR_GLM_Adj_w_HomeField/",GLM_type,"/", sep=""))
+
+
+    write.csv(defensive.worth.adjusted.df,
+              paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/CORR_GLM_Adj/",GLM_type,"/",stat,".csv", sep=""))
+    write.csv(defensive.worth.adjusted.hfield.df,
+              paste(getwd(),"/Rankings/", year,"/Week=",week,"/Defense/CORR_GLM_Adj_w_HomeField/",GLM_type,"/",stat,".csv", sep=""))
+
+    write.csv(offensive.worth.adjusted.df,
+              paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/CORR_GLM_Adj/",GLM_type,"/",stat,".csv", sep=""))
+    write.csv(offensive.worth.adjusted.hfield.df,
+              paste(getwd(),"/Rankings/", year,"/Week=",week,"/Offense/CORR_GLM_Adj_w_HomeField/",GLM_type,"/",stat,".csv", sep=""))
+
   }
 }
 
