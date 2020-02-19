@@ -1,5 +1,15 @@
 # !!! https://happygitwithr.com/rstudio-git-github.html !!!
 
+
+## There just doesn't appear to be a gigantic benefit from using Poisson vs Gaussian
+## even in cases of low-count stats...
+## Regardless of the metric (be it MSE, log-MSE, or Chi-Sq)
+
+## Try the GAUSSIAN with LOG-LINK...
+
+
+
+
 # WHICH GLM FAMILY TO USE??
 # https://stats.stackexchange.com/questions/190763/how-to-decide-which-glm-family-to-use?noredirect=1&lq=1
 
@@ -39,7 +49,7 @@ latest.week <- function(year){
 max.week <- latest.week(year)
 
 
-for (week in max.week){
+for (week in 12){
   
   print(week)
   
@@ -240,8 +250,10 @@ for (week in max.week){
       ##  0 - Home, 1- Neutral, 2 - Away
       full.df$Homefield012 <- as.numeric(full.df$Homefield)-1
       lm.obj.hfield.Gauss <- glm(Stat ~ Team + Opponent + Homefield012,
+                                 # family = gaussian("log"),
                                  data=full.df)
       lm.obj.hfield.Gauss
+      predict(lm.obj.hfield.Gauss, type="response")
       
     #  print("Gaussian:")
     #  print(sqrt(mean((resid(lm.obj.hfield.Gauss))^2)))
@@ -250,7 +262,8 @@ for (week in max.week){
                    lm.obj.hfield.Gauss, 
                    K=100,
                    #)$delta[1])
-                   cost = function(x,y) mean((log(ifelse(y>=0, y,0)+1)-log(x+1))^2))$delta[1])
+                   cost = function(x,y) mean((log(y+1)-log(x+1))^2))$delta[1])
+                   #cost = function(x,y) mean(sum(ifelse(y>=0, y,0)+1)-log(x+1))^2))$delta[1])
      # print(mean((resid(lm.obj.hfield.Gauss)/predict(lm.obj.hfield.Gauss))^2))
       
       plot(lm.obj.hfield.Gauss, which=1)
