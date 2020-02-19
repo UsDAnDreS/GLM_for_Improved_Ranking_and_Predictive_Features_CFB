@@ -1,5 +1,15 @@
 # !!! https://happygitwithr.com/rstudio-git-github.html !!!
 
+# WHICH GLM FAMILY TO USE??
+# https://stats.stackexchange.com/questions/190763/how-to-decide-which-glm-family-to-use?noredirect=1&lq=1
+
+# https://stats.stackexchange.com/questions/223160/should-i-use-poisson-distribution-for-non-integer-count-like-data
+
+# https://stats.stackexchange.com/questions/48811/cost-function-for-validating-poisson-regression-models
+
+
+library(boot)
+
 year <- 2017
 #week <- 10
 GLM_type <- "Gaussian"
@@ -220,25 +230,34 @@ for (week in max.week){
       contrasts(full.df$Opponent)
       contrasts(full.df$Homefield)
       
+    
       # Relevel:
       # relevel(full.df$Homefield, "")
       
+      colnames(full.df)[3] <- "Stat"
+      full.df$Stat <- ifelse(full.df$Stat>=0, full.df$Stat, 0)
       ## Making Homefield a NUMERIC VARIABLE to be modeled with SINGLE PARAMETER:
       ##  0 - Home, 1- Neutral, 2 - Away
       full.df$Homefield012 <- as.numeric(full.df$Homefield)-1
-      lm.obj.hfield.Gauss <- lm(full.df[,stat] ~ Team + Opponent + Homefield012,
-                                data=full.df)
+      lm.obj.hfield.Gauss <- glm(Stat ~ Team + Opponent + Homefield012,
+                                 data=full.df)
       lm.obj.hfield.Gauss
       
-      print("Gaussian:")
-      print(mean((resid(lm.obj.hfield.Gauss))^2))
-      print(mean((resid(lm.obj.hfield.Gauss)/predict(lm.obj.hfield.Gauss))^2))
+    #  print("Gaussian:")
+    #  print(sqrt(mean((resid(lm.obj.hfield.Gauss))^2)))
+      print("Gaussian CV:")
+      print(cv.glm(full.df, 
+                   lm.obj.hfield.Gauss, 
+                   K=100,
+                   #)$delta[1])
+                   cost = function(x,y) mean((log(ifelse(y>=0, y,0)+1)-log(x+1))^2))$delta[1])
+     # print(mean((resid(lm.obj.hfield.Gauss)/predict(lm.obj.hfield.Gauss))^2))
       
       plot(lm.obj.hfield.Gauss, which=1)
       
       library(tidyverse)
       res.df.Gauss <- data.frame(Res=abs(resid(lm.obj.hfield.Gauss)),
-                                 True=full.df[,stat],
+                                 True=full.df[,"Stat"],
                                  Pred=predict(lm.obj.hfield.Gauss)) %>% arrange(desc(Res))
       
       # print("INTERCEPT for GLM ADJ")
@@ -285,7 +304,7 @@ for (week in max.week){
       contrasts(full.df$Homefield)
       
       full.df$Homefield012 <- as.numeric(full.df$Homefield)-1
-      lm.obj.hfield.Poiss <- glm(ifelse(full.df[,stat]>=0,full.df[,stat],0)  ~ Team + Opponent + Homefield012,
+      lm.obj.hfield.Poiss <- glm(Stat  ~ Team + Opponent + Homefield012,
                                  family="poisson",
                                  data=full.df)
       lm.obj.hfield.Poiss
@@ -299,13 +318,20 @@ for (week in max.week){
                                            exp(coef(lm.obj.hfield.Poiss)[1] - sum(coef(lm.obj.hfield.Poiss)[(n.teams+1):(2*n.teams-1)]) + tail(coef(lm.obj.hfield.Poiss),1)))
       
       
-      print("Poisson:")
-      #predict(lm.obj.hfield.Poiss, type="response")
-      print(mean((resid(lm.obj.hfield.Poiss, type="response"))^2))
-      print(mean((resid(lm.obj.hfield.Poiss, type="response")/predict(lm.obj.hfield.Poiss, type="response"))^2))
+     # print("Poisson:")
+     # print(sqrt(mean((resid(lm.obj.hfield.Poiss, type="response"))^2)))
+      print("Poisson CV:")
+      set.seed(1)
+      print(cv.glm(full.df, 
+                   lm.obj.hfield.Poiss, 
+                   K=100,
+                   cost = function(x,y) mean((log(y+1)-log(x+1))^2))$delta[1])
+      #)$delta[1])
+      
+      
       
       res.df.Poiss <- data.frame(Res=abs(resid(lm.obj.hfield.Poiss, type="response")),
-                                 True=full.df[,stat],
+                                 True=full.df[,"Stat"],
                                  Pred=predict(lm.obj.hfield.Poiss,type="response")) %>% arrange(desc(Res))
       
       
