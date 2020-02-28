@@ -6,7 +6,7 @@ library(tidyverse)
 
 year <- 2017
 #week <- 10
-GLM_type <- "Gaussian"
+GLM_type <- "Poisson"
 
 corr.team.vs.opponent.stats <- T  # Whether to print out correlation between Team's & Opponent's stats in the same category
 # Because, in many cases, the lower the point count for the opponent, the lower the point count for the team itself..
@@ -254,8 +254,6 @@ for (week in max.week){
     
     # Needed to implement "gls()" function across all stats
     colnames(full.df)[4] <- "Stat"
-    
-    if (GLM_type == "Gaussian"){
       
       #####
       ## NO HOME-FIELD effect
@@ -295,6 +293,9 @@ for (week in max.week){
       )
       
       
+      
+  if (GLM_type == "Gaussian"){
+    
       lm.obj <- lm(Stat ~ Team + Opponent + Stat.Opp,
                    data=full.df)
       lm.obj
@@ -340,6 +341,7 @@ for (week in max.week){
       full.df$Homefield012 <- as.numeric(full.df$Homefield)-1
       lm.obj.hfield <- lm(Stat ~ Team + Opponent + Stat.Opp + Homefield012,
                           data=full.df)
+      
       lm.obj.hfield
       sum.obj.hfield <- summary(lm.obj.hfield)
       print(tail(sum.obj.hfield$coefficients,2))
@@ -378,18 +380,23 @@ for (week in max.week){
       ## NO HOME-FIELD effect
       ###########
       
-      lm.obj <- glm(ifelse(full.df[,"Stat"]>=0,full.df[,"Stat"],0) ~ Team + Opponent,
+      lm.obj <- glm(ifelse(full.df[,"Stat"]>=0,full.df[,"Stat"],0) ~ Team + Opponent + Stat.Opp,
                     family="poisson",
                     data=full.df)
       lm.obj
       levels(full.df$Team)
       
+      sum.obj <- summary(lm.obj)
+      print(tail(sum.obj$coefficients,1))
+      
+      plot(lm.obj, which=1)
+      
       
       ## Adjusted averages
-      offensive.worth.adjusted <- c(exp(coef(lm.obj)[1] + coef(lm.obj)[2:n.teams]),
-                                    exp(coef(lm.obj)[1] - sum(coef(lm.obj)[2:n.teams])))
-      defensive.worth.adjusted <- c(exp(coef(lm.obj)[1] + coef(lm.obj)[(n.teams+1):(2*n.teams-1)]),
-                                    exp(coef(lm.obj)[1] - sum(coef(lm.obj)[(n.teams+1):(2*n.teams-1)])))
+      offensive.worth.adjusted <- c(exp(coef(lm.obj)[1] + coef(lm.obj)[2:n.teams] + mean(full.df$Stat)*tail(coef(lm.obj),1)),
+                                    exp(coef(lm.obj)[1] - sum(coef(lm.obj)[2:n.teams]) + mean(full.df$Stat)*tail(coef(lm.obj),1)))
+      defensive.worth.adjusted <- c(exp(coef(lm.obj)[1] + coef(lm.obj)[(n.teams+1):(2*n.teams-1)] + mean(full.df$Stat)*tail(coef(lm.obj),1)),
+                                    exp(coef(lm.obj)[1] - sum(coef(lm.obj)[(n.teams+1):(2*n.teams-1)]) + mean(full.df$Stat)*tail(coef(lm.obj),1)))
       
       offensive.worth.adjusted.df <- data.frame(Team=levels(full.df$Team), 
                                                 Value=offensive.worth.adjusted,
@@ -415,18 +422,23 @@ for (week in max.week){
       contrasts(full.df$Homefield)
       
       full.df$Homefield012 <- as.numeric(full.df$Homefield)-1
-      lm.obj.hfield <- glm(ifelse(full.df[,"Stat"]>=0,full.df[,"Stat"],0)  ~ Team + Opponent + Homefield012,
+      lm.obj.hfield <- glm(ifelse(full.df[,"Stat"]>=0,full.df[,"Stat"],0)  ~ Team + Opponent + Stat.Opp + Homefield012,
                            family="poisson",
                            data=full.df)
       lm.obj.hfield
       levels(full.df$Team)
       
+      lm.obj.hfield
+      sum.obj.hfield <- summary(lm.obj.hfield)
+      print(tail(sum.obj.hfield$coefficients,2))
+      
+      
       
       ## Adjusted averages, with HOMEFIELD
-      offensive.worth.adjusted.hfield <- c(exp(coef(lm.obj.hfield)[1] + coef(lm.obj.hfield)[2:n.teams] + tail(coef(lm.obj.hfield),1)),
-                                           exp(coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[2:n.teams]) + tail(coef(lm.obj.hfield),1)))
-      defensive.worth.adjusted.hfield <- c(exp(coef(lm.obj.hfield)[1] + coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)] + tail(coef(lm.obj.hfield),1)),
-                                           exp(coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)]) + tail(coef(lm.obj.hfield),1)))
+      offensive.worth.adjusted.hfield <- c(exp(coef(lm.obj.hfield)[1] + coef(lm.obj.hfield)[2:n.teams] + mean(full.df$Stat)*tail(coef(lm.obj.hfield),2)[1] + tail(coef(lm.obj.hfield),1)),
+                                           exp(coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[2:n.teams]) + mean(full.df$Stat)*tail(coef(lm.obj.hfield),2)[1] + tail(coef(lm.obj.hfield),1)))
+      defensive.worth.adjusted.hfield <- c(exp(coef(lm.obj.hfield)[1] + coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)] + mean(full.df$Stat)*tail(coef(lm.obj.hfield),2)[1] + tail(coef(lm.obj.hfield),1)),
+                                           exp(coef(lm.obj.hfield)[1] - sum(coef(lm.obj.hfield)[(n.teams+1):(2*n.teams-1)]) + mean(full.df$Stat)*tail(coef(lm.obj.hfield),2)[1] + tail(coef(lm.obj.hfield),1)))
       
       
       # print("INTERCEPT for GLM ADJ")
