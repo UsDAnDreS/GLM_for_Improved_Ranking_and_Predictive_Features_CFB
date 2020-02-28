@@ -46,6 +46,24 @@
 # Points: 5.842696  vs  5.838357
 
 
+## For Log:
+#         Gaussian  vs   Poisson
+# Pct:    0.07840364  vs  0.09919698
+# Yds:    0.2781077   vs  0.3047034
+# TD:     0.1353672  vs  0.2930806
+# Yds.1:  0.4006057  vs  0.4350452
+# Avg:    0.07691797  vs  0.1191871
+# TD.1:   0.1297262  vs  0.2708729
+# Yds.2:  0.0958814  vs  0.09569329
+# Avg.1:  0.0333477 vs  0.04570202
+# Fum:    0.1039563  vs  0.262192
+# Int:    0.1147111  vs  0.2746425
+# TO:     0.1534951  vs  0.3312943
+# TD.2:   0.1162545  vs  0.2089876
+# Points: 0.313129  vs  0.4017946
+
+
+
 
 library(boot)
 
@@ -93,7 +111,7 @@ latest.week <- function(year){
 max.week <- latest.week(year)
 
 
-for (week in 12){
+for (week in max.week){
   
   print(week)
   
@@ -294,15 +312,31 @@ for (week in 12){
     ##  0 - Home, 1- Neutral, 2 - Away
     full.df$Homefield012 <- as.numeric(full.df$Homefield)-1
     full.df$Stat1 <- full.df$Stat + 1
-    lm.obj.hfield.Gauss <- glm(Stat1 ~ Team + Opponent + Homefield012,
+    lm.obj.hfield.Gauss <- glm(Stat1 ~ Team + Opponent, #+ Homefield012,
                                family = gaussian("log"),
                                data=full.df)
     lm.obj.hfield.Gauss
     summary(predict(lm.obj.hfield.Gauss, type="response")-1)
     
+    plot(lm.obj.hfield.Gauss, which=1)
     # sum.obj.Gauss <- summary(lm.obj.hfield.Gauss)
     # sum.obj.Gauss$deviance
     # sum.obj.Gauss$aic
+    
+    
+    ## Heteroscedasticity issue doesn't look fixable in that
+    ##  FACTOR-ONLY predictor type of space, with each factor level
+    ##  only having ~12 observations.
+    
+    library(MASS)
+    bc <- boxcox(Stat1 ~ Team + Opponent,
+                 data=full.df)
+    lambda <- bc$x[which.max(bc$y)]
+    lm.bc <- lm(((Stat1^lambda-1)/lambda) ~ Team + Opponent,
+                data = full.df)
+    plot(lm.bc, which=1)
+    plot(lm.bc, which=2)
+    
     
     #  print("Gaussian:")
     #  print(sqrt(mean((resid(lm.obj.hfield.Gauss))^2)))
