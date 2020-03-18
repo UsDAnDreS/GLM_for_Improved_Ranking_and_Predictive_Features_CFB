@@ -6,7 +6,7 @@ library(tidyverse)
 
 year <- 2017
 #week <- 10
-GLM_type <- "Poisson"
+GLM_type <- "Gaussian"
 
 corr.team.vs.opponent.stats <- T  # Whether to print out correlation between Team's & Opponent's stats in the same category
 # Because, in many cases, the lower the point count for the opponent, the lower the point count for the team itself..
@@ -59,9 +59,10 @@ for (week in max.week){
   # "Points"
   
   
+  Data$X.3 <- NULL
   stats <- colnames(Data)[c(9:11,13:15,17:18,25:27)]
-  stats <- c(stats, "TD.2", "Points", "Avg.2")
-  if (GLM_type == "Poisson") stats <- c("TD", "TD.1", "Fum", "Int", "TO", "TD.2", "Points")
+  stats <- c(stats, "Tot.TD", "Pass.Avg", "Points")
+  if (GLM_type == "Poisson") stats <- c("Pass.TD", "Rush.TD", "Fum", "Int", "TO", "Tot.TD", "Points")
   
   FBS_Team_names <- sapply(list.files(path=path_offense), function(x) substring(x, 1,nchar(x)-4))
   names(FBS_Team_names) <- NULL
@@ -90,21 +91,22 @@ for (week in max.week){
       Data_offense <- subset(read.csv(paste(path_offense, team, ".csv", sep="")), as.Date(Date) <= max.date)
       Data_defense <- subset(read.csv(paste(path_defense, team, ".csv", sep="")), as.Date(Date) <= max.date)
       
-      if (stat == "TD.2") {Data_offense$TD.2 <- Data_offense$TD + Data_offense$TD.1; Data_defense$TD.2 <- Data_defense$TD + Data_defense$TD.1}
-      if (stat == "Avg.2") {Data_offense$Avg.2 <- ifelse(Data_offense$Att !=0, Data_offense$Yds/Data_offense$Att,0); 
-      Data_defense$Avg.2 <- ifelse(Data_offense$Att !=0, Data_defense$Yds/Data_defense$Att,0)}
+      Data_offense$X <- Data_defense$X <- Data_offense$X.3 <- Data_defense$X.3 <- NULL
       
-      if (stat == "Points"){
-        Data_offense$Points <-   sapply(Data_offense$X.2, function(x){
-          y <- str_extract(x, "\\(.*?\\-");
-          return(as.numeric(substring(y,2,(nchar(y)-1))))})
-        Data_defense$Points <-   sapply(Data_defense$X.2, function(x){
-          y <- str_extract(x, "\\-.*?\\)");
-          return(as.numeric(substring(y,2,(nchar(y)-1))))})
-      }
+      Data_offense$Tot.TD <- Data_offense$Rush.TD + Data_offense$Pass.TD; Data_defense$Tot.TD <- Data_defense$Rush.TD + Data_defense$Pass.TD
+      Data_offense$Pass.Avg <- ifelse(Data_offense$Pass.Att !=0, Data_offense$Pass.Yds/Data_offense$Pass.Att,0); 
+      Data_defense$Pass.Avg <- ifelse(Data_offense$Pass.Att !=0, Data_defense$Pass.Yds/Data_defense$Pass.Att,0)
+      
+      Data_offense$Points <-   sapply(Data_offense$X.2, function(x){
+        y <- str_extract(x, "\\(.*?\\-");
+        return(as.numeric(substring(y,2,(nchar(y)-1))))})
+      
+      Data_defense$Points <-   sapply(Data_defense$X.2, function(x){
+        y <- str_extract(x, "\\-.*?\\)");
+        return(as.numeric(substring(y,2,(nchar(y)-1))))})
+      
       
       # https://stackoverflow.com/questions/1454913/regular-expression-to-find-a-string-included-between-two-characters-while-exclud
-      
       
       
       full.df <- rbind(full.df,data.frame(Team=factor(team), 
@@ -121,6 +123,7 @@ for (week in max.week){
         #Homefield=subset(Data_homefield, Opponent == "Non-Major")$X)[,-4])
       }
     }
+    
     
     
     # Getting rid of "*" due to bowl games, and creating a "Non-Major" team
@@ -165,21 +168,6 @@ for (week in max.week){
     abline(lm.obj)
     plot(lm.obj, which=1)
    # plot(lm.obj, which=2)
-    
-    
-    # library(MASS)
-    # bc <- boxcox(X2 ~ X1,
-    #              data = data.frame(sorted.stats))
-    # lambda <- bc$x[which.max(bc$y)]
-    # lm.bc <- lm(((X2^lambda-1)/lambda) ~ X1,
-    #              data = data.frame(sorted.stats))
-    # plot(lm.bc, which=1)
-    # plot(lm.bc, which=2)
-    
-    
-    
-    
-    
     
     
     ####
@@ -285,9 +273,10 @@ for (week in max.week){
       full.df$Stat.Opp <- sapply(1:nrow(full.df), 
                                  function(x){
                                    interm.df <- 
-                                     full.df %>% select(Stat, group.assignments) %>%
+                                     full.df %>% select(Stat, group.assignments,Team) %>%
                                      filter(group.assignments == full.df[x,]$group.assignments & 
-                                              Stat != full.df[x,]$Stat) %>% 
+                                              #Stat != full.df[x,]$Stat)
+                                              Team == full.df[x,]$Opponent) %>% 
                                      select(Stat)
                                    interm.df$Stat[1]}
       )
@@ -296,13 +285,63 @@ for (week in max.week){
       
   if (GLM_type == "Gaussian"){
     
-      lm.obj <- lm(Stat ~ Team + Opponent + Stat.Opp,
-                   data=full.df)
-      lm.obj
-      sum.obj <- summary(lm.obj)
-      print(tail(sum.obj$coefficients,1))
+      ## Trying out the comparison of:
+          # - EXPLICIT model:
+          #     y1 = mu + beta*X1 + eps_1,
+          #     y2 = mu + beta*X2 + eps_2,
+ 
+    lm.obj <- lm(Stat ~ Team + Opponent + Stat.Opp,
+                 data=full.df)
+    lm.obj
+    summary(lm.obj)
+    tail(coef(lm.obj))[1]
+    head(coef(lm.obj))[1]
+    coef(lm.obj)[1]
+    tail(coef(lm.obj))
+    
+    
+          # - IMPLICIT model:
+          #     y1 = mu + eps_1,  cov(eps_1, eps_2) = rho
+          #     y2 = mu + eps_2,
+    
+    ## YES, the APPROXIMATELY MATCH via:
+    ##     mu1 = (mu2 - rho*mu2) 
+    ##     beta = rho
+    ##     RSE1 = sqrt((1-rho^2)*RSE2^2)
+              
+      ## Implementing the correlation structure between BOTH TEAMS' OUTPUTS IN A GAME...
+      cor.mat <- Initialize(corCompSymm(form = ~ 1 | factor(group.assignments)),
+                            data = full.df)
+     # corMatrix(cor.mat)
       
-      plot(lm.obj, which=1)
+      full.df$Points
+      
+      ## Compound symmetry, making it
+      ## (1 rho)
+      ## (rho 1)
+      ## for observations corresponding to the same game.
+      ## rho is shared across all games.
+      # http://staff.pubhealth.ku.dk/~jufo/courses/rm2017/rPackageLME.pdf
+      
+      gls.obj <- gls(Stat ~ Team + Opponent,
+                     data=full.df,
+                     correlation = corCompSymm(form = ~ 1 | group.assignments))
+      print("Correlation of Offenses")
+      print(intervals(gls.obj)$corStruct[1:3])
+      
+      gls.obj$coefficients[1]
+      gls.obj
+      tail(gls.obj$coefficients)
+      
+      # !!! MARCH 16TH !!!!
+      # http://www.maths.qmul.ac.uk/~ig/MTH5118/Notes11-09.pdf
+      # https://stats.stackexchange.com/questions/340973/express-multivariate-normal-as-a-univariate-normals
+      # E[y1|y2] FORMULA IS THE KEY !!!
+      # E(X|Y) = µ1 +ρ σ1/σ2(Y −µ2).
+      
+      # Intercept = 57.973986306
+      # rho = 0.02820537
+      # RSE = 10.56872
     
       
       ## Adjusted averages
@@ -326,6 +365,30 @@ for (week in max.week){
       ## WITH HOME-FIELD effect
       #####
       
+      ## Trying out the comparison of:
+      # - EXPLICIT model:
+      #     y1 = mu + beta*X1 + eps_1, eps_1 ~ N(0,sigma^2)
+      #     y2 = mu + beta*X2 + eps_2, eps_2 ~ N(0,sigma^2)
+      
+      
+      # - IMPLICIT model:
+      #     y1 = mu + eps_1, eps_1 ~ N(0,sigma^2), 
+      #     y2 = mu + eps_2, eps_2 ~ N(0,sigma^2),
+      #     cov(eps_1, eps_2) = rho
+      
+      # E[y1|y2] FORMULA IS THE KEY !!!
+      # E(X|Y) = µ1 +ρ σ1/σ2(Y −µ2).
+      
+      ## YES, they APPROXIMATELY MATCH via:
+      ##     mu1 = (mu2 - rho*mu2) 
+      ##     beta = rho
+      ##     RSE1 = sqrt((1-rho^2)*RSE2^2)
+      
+      # With the homefield included:
+      # 58.50282* (1 - 0.02974459) = 56.76268   vs  56.78868 
+      # 0.02983669                              vs  0.02974459 
+      # 10.55966*sqrt(1-0.02974459^2)=10.55499  vs  10.56
+      
       ## Setting "Homefield" to be 0-0 if "N", 1-0 if "Home" (or " "), 0-1 if "Away" (or "@")
       contrasts(full.df$Homefield) <- "contr.treatment"
       
@@ -338,13 +401,27 @@ for (week in max.week){
       
       ## Making Homefield a NUMERIC VARIABLE to be modeled with SINGLE PARAMETER:
       ##  0 - Home, 1- Neutral, 2 - Away
-      full.df$Homefield012 <- as.numeric(full.df$Homefield)-1
-      lm.obj.hfield <- lm(Stat ~ Team + Opponent + Stat.Opp + Homefield012,
-                          data=full.df)
       
+      ## Explicit regression
+      full.df$Homefield012 <- as.numeric(full.df$Homefield)-1
+      lm.obj.hfield <- lm(#Stat ~ Team + Opponent + Stat.Opp + Homefield012,
+                          Stat ~ Stat.Opp + Homefield012,
+                          data=full.df)
       lm.obj.hfield
-      sum.obj.hfield <- summary(lm.obj.hfield)
-      print(tail(sum.obj.hfield$coefficients,2))
+      summary(lm.obj.hfield)
+      tail(coef(lm.obj.hfield),2)[1]
+      head(coef(lm.obj.hfield),1)
+      
+      
+      ## Bivariate model with correlation
+      gls.obj.hfield <- gls(# Stat ~ Team + Opponent + Homefield012,
+                            Stat ~ Homefield012,
+                            data=full.df,
+                            correlation = corCompSymm(form = ~ 1 | group.assignments))
+      print("Correlation of Offenses")
+      print(intervals(gls.obj.hfield)$corStruct[2])
+      gls.obj.hfield$coefficients[1]
+      # gls.obj.hfield
       
       
       

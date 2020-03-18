@@ -174,9 +174,23 @@ for (j in 1:length(low.names)){
   
   # Save the scraped defensive logs data.
   write.csv(offense_data, file=paste(getwd(),"/Game_Logs/",year,'/Offense/',FBS_Team_names[j],'.csv', sep=''))
-  
   # Save the scraped defensive logs data.
   write.csv(defense_data, file=paste("Game_Logs/",year,'/Defense/',FBS_Team_names[j],'.csv', sep=''))
+
+  offense_data <- read.csv(paste(getwd(),"/Game_Logs/",year,'/Offense/',FBS_Team_names[j],'.csv', sep=''))
+  defense_data <- read.csv(paste("Game_Logs/",year,'/Defense/',FBS_Team_names[j],'.csv', sep=''))
+
+  col.bad.names <- c("Att", "Yds", "TD", "Att.1","Yds.1", "Avg", "TD.1", "Yds.2", "Avg.1", "TD.2", "Avg.2", "Yds.3")
+  col.good.names <- c("Pass.Att", "Pass.Yds", "Pass.TD", "Rush.Att", "Rush.Yds", "Rush.Avg", "Rush.TD", "Tot.Yds", "Tot.Avg", "Tot.TD", "Pass.Avg", "Pen.Yds")
+  
+  col.names <- colnames(offense_data)
+  colnames(offense_data) <- colnames(defense_data) <- sapply(col.names, function(x) {if (x %in% col.bad.names) return(col.good.names[which(x == col.bad.names)]); return(x)})
+  
+  # Save the scraped defensive logs data.
+  write.csv(offense_data, file=paste(getwd(),"/Game_Logs/",year,'/Offense/',FBS_Team_names[j],'.csv', sep=''))
+  # Save the scraped defensive logs data.
+  write.csv(defense_data, file=paste("Game_Logs/",year,'/Defense/',FBS_Team_names[j],'.csv', sep=''))
+  
 }
 
 
@@ -185,61 +199,39 @@ for (j in 1:length(low.names)){
 ## Now, what were the bad names?
 url.names[bad.ind]
 
-## The "good.names" vector will depend on the year, but I've included all the critical team names
-## across 2000-2017 seasons below. Just make sure to include/dispose of the teams depending on
-## which year you're looking at right now.
-##
-## For example, for year 2001 the bad names are:
 
-## [1] "louisiana" "lsu"       "ole-miss"  "pitt"      "smu"       "texas-a&m" "uab"       "ucf"       "unlv"     
-## [10] "usc"       "utep"
-##
-## So, make sure to comment out "florida-am" and "texas-san-antonio", while the rest of good names
-## fully correspond to their bad counterparts (louisiana-lafayette => louisiana; louisiana-state => lsu;
-## mississippi => ole-miss, etc)
+## Bad names are the ones that result from lower-casing the initial team names, but
+## that DON'T correspond to URL names.
+## Good names are the actual URL names.
+## Capital names are the best names for further official use in the modeling,
+## here they will be used in the file names.
 
-good.names <- c(#"florida-am",
-  "louisiana-lafayette", 
-  "louisiana-state",
-  "mississippi", 
-  "pittsburgh",
-  "southern-methodist", 
-  "texas-am",
-  "alabama-birmingham",
-  "central-florida",
-  "nevada-las-vegas",
-  "southern-california", 
-  "texas-el-paso",
-  "texas-san-antonio"
-)
+bad.good.capital.names <- matrix(c(
+ "florida-a&m", "florida-am", "Florida A&M",
+ "louisiana", "louisiana-lafayette", "Louisiana", 
+ "lsu", "louisiana-state", "Louisiana State",
+ "ole-miss", "mississippi", "Mississippi", 
+ "pitt",  "pittsburgh", "Pittsburgh",
+ "smu", "southern-methodist", "Southern Methodist", 
+ "texas-a&m", "texas-am", "Texas A&M",
+ "uab", "alabama-birmingham", "Alabama-Birmingham",
+ "ucf", "central-florida", "Central Florida",
+  "unlv", "nevada-las-vegas", "Nevada-Las Vegas",
+  "usc", "southern-california", "Southern California", 
+  "utep", "texas-el-paso", "Texas-El Paso",
+  "utsa","texas-san-antonio", "Texas-San Antonio"
+), ncol=3, byrow=T)
+
+## Now, replace the initially bad names, with their correct counterparts (which can be used in url-names).
+## That will allow you to scrape the offensive & defensive logs for those teams as well.
+url.names[bad.ind] <- sapply(url.names[bad.ind], function(x) bad.good.capital.names[bad.good.capital.names[,1]==x,2])
 
 ## There's "Central Florida" in "Opponent" column, instead of "UCF"...
 #  and a bunch of other examples...
 #  So, instead, just decided to make it all according to the "Opponent" column format
-good.capital.names <- c(
-  #"Florida A&M",
-  "Louisiana", 
-  "Louisiana State",
-  "Mississippi", 
-  "Pittsburgh",
-  "Southern Methodist", 
-  "Texas A&M",
-  "Alabama-Birmingham",
-  "Central Florida",
-  "Nevada-Las Vegas",
-  "Southern California", 
-  "Texas-El Paso",
-  "Texas-San Antonio"
-)
-  
-cbind(url.names[bad.ind], good.names)
+good.capital.names <- sapply(url.names[bad.ind], function(x) bad.good.capital.names[bad.good.capital.names[,2]==x,3])
 
 
-
-## Now, replace the initially bad names, with their correct counterparts (which can be used in url-names).
-## That will allow you to scrape the offensive & defensive logs for those teams as well.
-
-url.names[bad.ind] <- good.names
 
 for (j in 1:length(bad.ind)){
   #for (j in good.names){
@@ -295,12 +287,25 @@ for (j in 1:length(bad.ind)){
   colnames(offense_data) <- colnames(defense_data)
   
   # Save the scraped defensive logs data.
- # write.csv(offense_data, paste("Game_Logs/",year,'/Offense/',FBS_Team_names[bad.ind[j]],'.csv', sep=''))
   write.csv(offense_data, paste("Game_Logs/",year,'/Offense/',good.capital.names[j],'.csv', sep=''))
   
   # Save the scraped defensive logs data.
-#  write.csv(defense_data, paste("Game_Logs/",year,'/Defense/',FBS_Team_names[bad.ind[j]],'.csv', sep=''))
   write.csv(defense_data, paste("Game_Logs/",year,'/Defense/',good.capital.names[j],'.csv', sep=''))
+  
+  ## Re-read, and clean up the column names.
+  offense_data <- read.csv(paste("Game_Logs/",year,'/Offense/',good.capital.names[j],'.csv', sep=''))
+  defense_data <- read.csv(paste("Game_Logs/",year,'/Defense/',good.capital.names[j],'.csv', sep=''))
+  
+  col.bad.names <- c("Att", "Yds", "TD", "Att.1","Yds.1", "Avg", "TD.1", "Yds.2", "Avg.1", "TD.2", "Avg.2", "Yds.3")
+  col.good.names <- c("Pass.Att", "Pass.Yds", "Pass.TD", "Rush.Att", "Rush.Yds", "Rush.Avg", "Rush.TD", "Tot.Yds", "Tot.Avg", "Tot.TD", "Pass.Avg", "Pen.Yds")
+  
+  col.names <- colnames(offense_data)
+  colnames(offense_data) <- colnames(defense_data) <- sapply(col.names, function(x) {if (x %in% col.bad.names) return(col.good.names[which(x == col.bad.names)]); return(x)})
+  
+  # Save the scraped defensive logs data.
+  write.csv(offense_data, file=paste("Game_Logs/",year,'/Offense/',good.capital.names[j],'.csv', sep=''))
+  # Save the scraped defensive logs data.
+  write.csv(defense_data, file=paste("Game_Logs/",year,'/Defense/',good.capital.names[j],'.csv', sep=''))
   
 }
 

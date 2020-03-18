@@ -1,5 +1,8 @@
 # !!! https://happygitwithr.com/rstudio-git-github.html !!!
+
+## !!! DPLYR's "SELECT()" clashes with MASS's "SELECT()" !!!
 library(nlme)
+library(tidyverse)
 
 year <- 2017
 #week <- 10
@@ -56,9 +59,10 @@ for (week in max.week){
   # "Points"
   
   
+  Data$X.3 <- NULL
   stats <- colnames(Data)[c(9:11,13:15,17:18,25:27)]
-  stats <- c(stats, "TD.2", "Points", "Avg.2")
-  if (GLM_type == "Poisson") stats <- c("TD", "TD.1", "Fum", "Int", "TO", "TD.2", "Points")
+  stats <- c(stats, "Tot.TD", "Pass.Avg", "Points")
+  if (GLM_type == "Poisson") stats <- c("Pass.TD", "Rush.TD", "Fum", "Int", "TO", "Tot.TD", "Points")
   
   FBS_Team_names <- sapply(list.files(path=path_offense), function(x) substring(x, 1,nchar(x)-4))
   names(FBS_Team_names) <- NULL
@@ -87,9 +91,11 @@ for (week in max.week){
       Data_offense <- subset(read.csv(paste(path_offense, team, ".csv", sep="")), as.Date(Date) <= max.date)
       Data_defense <- subset(read.csv(paste(path_defense, team, ".csv", sep="")), as.Date(Date) <= max.date)
       
-      if (stat == "TD.2") {Data_offense$TD.2 <- Data_offense$TD + Data_offense$TD.1; Data_defense$TD.2 <- Data_defense$TD + Data_defense$TD.1}
-      if (stat == "Avg.2") {Data_offense$Avg.2 <- ifelse(Data_offense$Att !=0, Data_offense$Yds/Data_offense$Att,0); 
-      Data_defense$Avg.2 <- ifelse(Data_offense$Att !=0, Data_defense$Yds/Data_defense$Att,0)}
+      Data_offense$X <- Data_defense$X <- Data_offense$X.3 <- Data_defense$X.3 <- NULL
+      
+      Data_offense$Tot.TD <- Data_offense$Rush.TD + Data_offense$Pass.TD; Data_defense$Tot.TD <- Data_defense$Rush.TD + Data_defense$Pass.TD
+      Data_offense$Pass.Avg <- ifelse(Data_offense$Pass.Att !=0, Data_offense$Pass.Yds/Data_offense$Pass.Att,0); 
+      Data_defense$Pass.Avg <- ifelse(Data_offense$Pass.Att !=0, Data_defense$Pass.Yds/Data_defense$Pass.Att,0)
       
       if (stat == "Points"){
         Data_offense$Points <-   sapply(Data_offense$X.2, function(x){
@@ -131,7 +137,6 @@ for (week in max.week){
     ## Clean up the NAs
     full.df[,3] <- ifelse(!is.na(full.df[,3]), full.df[,3], 0)
     
-    library(tidyverse)
     full.df.flipped <- full.df
     full.df.flipped$Team <- full.df$Opponent
     full.df.flipped$Opponent <- full.df$Team
@@ -142,12 +147,43 @@ for (week in max.week){
     dim(full.df)
     
     
-    ## Getting the x=MAX stat in a game, y=MIN.. getting rid of duplicates
+    ## Getting the x=MAX stat in a game, y=MIN.. 
+    ## getting rid of duplicates
     dim(t(apply(full.df.joined %>% select(3,5), 1, sort)))
     sorted.stats <- unique(t(apply(full.df.joined %>% select(3,5), 1, sort)))
     print(sorted.stats %>% cor() %>% .[1,2])
     sorted.stats %>% plot(main= colnames(full.df)[3])
     
+    
+    ## The HETEROSCEDASTICITY is tough to fix again:
+    ## We have more data on games with losing teams having 0-14 points
+    ## than on games with losing teams scoring 17-28 points, 28+ etc...
+    ## Hence there's MORE VARIABILITY as to HOW MUCH A WINNER SCORES
+    ## for situations where LOSING TEAMS HAVE 0-14 points
+    
+   summary(apply(sorted.stats,1,diff))
+   lm.obj <- lm(X1 ~ X2, 
+                data = data.frame(sorted.stats))
+   summary(lm.obj)
+   abline(lm.obj)
+   plot(lm.obj, which=1)
+   plot(lm.obj, which=2)
+   
+   
+   # library(MASS)
+   # bc <- boxcox(X2 ~ X1,
+   #              data = data.frame(sorted.stats))
+   # lambda <- bc$x[which.max(bc$y)]
+   # lm.bc <- lm(((X2^lambda-1)/lambda) ~ X1,
+   #              data = data.frame(sorted.stats))
+   # plot(lm.bc, which=1)
+   # plot(lm.bc, which=2)
+   
+   
+   
+   
+   
+   
     
     ####
     ## Getting a NEUTRAL FIELD sign ("N")
@@ -254,6 +290,8 @@ for (week in max.week){
                             data = full.df)
       corMatrix(cor.mat)
       
+      full.df$Points
+      
       ## Compound symmetry, making it
       ## (1 rho)
       ## (rho 1)
@@ -268,6 +306,7 @@ for (week in max.week){
       print(intervals(gls.obj)$corStruct[1:3])
       
       summary(gls.obj)
+      gls.obj
       
       print("Group assignments (should be 2 all around):")
       print(table(table(full.df$group.assignments)))
